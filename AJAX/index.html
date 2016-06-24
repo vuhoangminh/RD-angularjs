@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Let AJAX change this text.</p>
+
+<button type="button" onclick="loadDoc()">Change Content</button>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "http://192.168.1.12:8080/smartdatics-sora/restapi/room/3", false);
+  xhttp.send();
+  document.getElementById("demo").innerHTML = xhttp.status;
+//  alert(xhttp.status);
+    console.log(xhttp.status);
+}
+</script>
+
+</body>
+</html>
+
