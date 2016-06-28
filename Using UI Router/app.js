@@ -50,27 +50,38 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     
     // function to process the form
     $scope.processForm = function() {
-        alert('awesome!');
+        
+        $http.jsonp('http://www.example.com?callback=JSON_CALLBACK')
+        .success (function('{"id":"3","description":"xx","floor":2}') {})
+        
+//        var xhttp = new XMLHttpRequest();
+//        xhttp.open("POST", "http://192.168.1.12:8080/smartdatics-sora/restapi/room", false);
+//        xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+//        xhttp.send('{"id":"3","description":"xx","floor":2}');
+//        alert(parseJson(xhttp.responseText).mainMessage);
+//        console.log(xhttp.status);
     };
-    
 });
 
-//// send 
-//// =============================================================================
-//function loadDoc() {
-//  var xhttp;
-//  if (window.XMLHttpRequest) {
-//    // code for modern browsers
-//    xhttp = new XMLHttpRequest();
-//    } else {
-//    // code for IE6, IE5
-//    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-//  }
-//  xhttp.onreadystatechange = function() {
-//    if (xhttp.readyState == 4 && xhttp.status == 200) {
-//      document.getElementById("demo").innerHTML = xhttp.responseText;
+//    function parseJson(str) {
+//        try {
+//		  return JSON.parse(str);
+//		} catch (ex) {
+//		  console.error(ex);
+//		}
 //    }
-//  };
-//  xhttp.open("GET", "ajax_info.txt", true);
-//  xhttp.send();
+
+//function jsonCallback(json){
+//  console.log(json);
 //}
+//
+//$.ajax({
+//  url: "http://run.plnkr.co/plunks/v8xyYN64V4nqCshgjKms/data-2.json",
+//  dataType: "jsonp"
+//});
+
+
+//$http.jsonp('http://www.example.com?callback=JSON_CALLBACK')
+//  .success (function(data) {
+//    data='{"id":"3","description":"xx","floor":2}';
+//  })

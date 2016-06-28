@@ -12,9 +12,17 @@ function loadDoc() {
   xhttp.open("GET", "http://192.168.1.12:8080/smartdatics-sora/restapi/room/3", false);
   xhttp.send();
   document.getElementById("demo").innerHTML = xhttp.status;
-//  alert(xhttp.status);
-    console.log(xhttp.status);
+  alert(parseJson(xhttp.responseText).mainMessage);
+  console.log(xhttp.status);
 }
+    
+    function parseJson(str) {
+        try {
+  return JSON.parse(str);
+} catch (ex) {
+  console.error(ex);
+}
+    }
 </script>
 
 </body>
