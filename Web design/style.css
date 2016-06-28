@@ -2,9 +2,15 @@
 .header {
     background-color:rgb(18,31,43);
     color:white;
-    text-align:center;
+    text-align: center;
     padding:4px;
-    height:10%;
+    height:100px;
+    line-height: 100px; 
+/*    width: 100%;*/
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
 }
 
 .body {
@@ -12,19 +18,22 @@
     background-color:rgb(39,51,63);
     color:white;
     height:80%;
+    width: 100%;
 }
 
-}
 .footer {
     background-color:rgb(18,31,43);
     color:white;
     text-align:center;
-    padding:4px;
-    height:10%;
+/*    padding:4px;*/
+    height:100px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
 }
 
 .container-full {
-  margin: 0 auto;
+/*  margin: 0 auto;*/
   width: 100%;
 }
 
@@ -41,6 +50,9 @@
 .right {
     border-right: 1px solid #ccc;
 }
+
+
+
 
 /*Font settings*/
 h1 {
