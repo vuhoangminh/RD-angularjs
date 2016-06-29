@@ -31,6 +31,12 @@
     <pre>
         {{ formData }}
     </pre>
+    
+
+    <div ng-app="MyModule" ng-controller="MainCtrl">
+      <p ng-show="loading">Loading...</p>
+      <p ng-hide="loading">Response: {{response}}</p>
+    </div>
 
 
 </div>
