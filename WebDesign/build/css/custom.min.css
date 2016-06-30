@@ -90,7 +90,7 @@
     display: none
 }
 .menu_section {
-    margin-bottom: 20px
+    margin-bottom: 9px
 }
 .menu_section h3 {
     padding-left: 15px;
@@ -98,7 +98,7 @@
     text-transform: uppercase;
     letter-spacing: .5px;
     font-weight: bold;
-    font-size: 11px;
+    font-size: 12px;
     margin-bottom: 0;
     margin-top: 0;
     text-shadow: 1px 1px #000
@@ -574,7 +574,7 @@ a:focus {
     cursor: pointer
 }
 .nav.side-menu>li>a {
-    margin-bottom: 6px
+    margin-bottom: 1px
 }
 .nav.side-menu>li>a:hover {
     color: #F2F5F7 !important
@@ -4328,7 +4328,7 @@ ul.notifications {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 13px;
+    font-size: 12px;
     margin: 4px 2px;
     cursor: pointer;
     background-color: #2a3f54;
@@ -4336,5 +4336,12 @@ ul.notifications {
     border-radius: 12px;
     width: 150px;
     height: 30px;
-    margin-top: 40px;  
+    margin-top: 20px; 
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button_invi:hover {
+    background-color: #4CAF50;
+    color: white;
 }
