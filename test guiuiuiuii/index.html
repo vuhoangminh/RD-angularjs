@@ -1,0 +1,23 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script>
+    function cbFunc() {
+        alert(1);
+    }
+
+    $.ajax({
+            type: "post",
+            url: "http://192.168.1.14:8080/smartdatics-sora/restapi/room",
+            dataType: 'json',
+            data: JSON.stringify(JSON.parse('{ "id": "3", "description": "hehe", "floor": 3 }')),
+            xhrFields: {
+                    withCredentials: true
+            },
+            crossDomain: true,
+            success: cbFunc
+    });
+    </script>
+</head>
+<body>
+XX
+</body>

@@ -66,7 +66,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
         var MainCtrl = function($scope, $http) {
         $scope.loading = true;
-        $http.post('http://192.168.1.14:8080/smartdatics-sora/restapi/room/', { id:"3",description:"hehe",floor:2 }).success(function(response) {
+        $http.post('http://192.168.1.14:8080/smartdatics-sora/restapi/room/', { id:"5",description:"hehe",floor:2 }).success(function(response) {
                 $scope.response = response;
                 $scope.loading = false;
                 alert("awesome");
