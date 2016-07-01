@@ -4327,7 +4327,7 @@ ul.notifications {
 /*    padding: 15px 32px;*/
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline;
     font-size: 12px;
     margin: 4px 2px;
     cursor: pointer;
@@ -4335,6 +4335,7 @@ ul.notifications {
     border: 1px solid #FFFFFF;
     border-radius: 12px;
     width: 150px;
+/*    width: 85%;*/
     height: 30px;
     margin-top: 20px; 
     -webkit-transition-duration: 0.4s; /* Safari */
