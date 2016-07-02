@@ -883,6 +883,7 @@ h2 {
   float: left;
   clear: both;
   margin-top: 5px;
+  text-align: center
 }
 .x_content h4 {
   font-size: 16px;
@@ -4640,7 +4641,7 @@ ul.notifications {
 /** /FullCalendar **/
 
 /** Dropzone.js **/
-.dropzone {
+.dropzone {    
   min-height: 300px;
   border: 1px solid #e5e5e5;
 }

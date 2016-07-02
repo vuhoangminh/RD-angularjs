@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -16,11 +16,21 @@
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- Dropzone.js -->
-    <link href="../vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
-
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- Lato font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+      
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+      
+      
   </head>
 
   <body class="nav-md">
@@ -29,58 +39,48 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Smartdatics</span></a>
+              <a href="index.html" class="site_title">
+                  <i class="fa fa-scribd"></i> 
+                  <span>Smartdatics</span></a>
             </div>
 
             <div class="clearfix"></div>
 
-            <!-- menu profile quick info -->
-            <div class="profile">
-              <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-
             <br />
 
             <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <h3 style="color:rgb(180,180,180);">Management</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-database"></i> Database <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="database_new.html">New Database</a></li>
-                      <li><a>Open Database</a></li>
-                      <li><a>Set Default Location</a></li>
+                      <li><a href="database_upload.html">New Database</a></li>
+                      <li><a href="database_load.html">Load Database</a></li>
+                      <li><a href="#">Set Default Location</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bars"></i> Well <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a>Load Wells from Database</a></li>
-                      <li><a>Select Well</a></li>
-                      <li><a>Create New Well</a></li>
+                      <li><a href="#">Load Wells from Database</a></li>
+                      <li><a href="#">Select Well</a></li>
+                      <li><a href="#">Create New Well</a></li>
                     </ul>
                   </li>
 
                   <li><a><i class="fa fa-vine"></i> Curve <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a>Load Curves from Well</a></li>
-                      <li><a>Select Curve</a></li>    
-                      <li><a>Create New Curve</a></li>
+                      <li><a href="#">Load Curves from Well</a></li>
+                      <li><a href="#">Select Curve</a></li>    
+                      <li><a href="#">Create New Curve</a></li>
                     </ul>
                   </li>
 
                   <li><a><i class="fa fa-sticky-note-o"></i> Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a>Load Data</a></li>
-                      <li><a>Save Data</a></li>    
-                      <li><a>Edit Data</a></li>
+                      <li><a href="#">Load Data</a></li>
+                      <li><a href="#">Save Data</a></li>    
+                      <li><a href="#">Edit Data</a></li>
                     </ul>
                   </li>
 
@@ -92,24 +92,23 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-pencil"></i> Parameter Sets <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a>Clay Volume</a></li>
-                      <li><a>Porosity and Water Saturation</a></li>    
-                      <li><a>Cutoffs and Summation</a></li>
-                      <li><a>Mineral Solver</a></li>
-                      <li><a>Basic Log Analysis</a></li>                        
+                      <li><a href="#">Clay Volume</a></li>
+                      <li><a href="#">Porosity and Water Saturation</a></li>    
+                      <li><a href="#">Cutoffs and Summation</a></li>
+                      <li><a href="#">Mineral Solver</a></li>
+                      <li><a href="#">Basic Log Analysis</a></li>                        
                     </ul>
                   </li>
                     
                   <li><a><i class="fa fa-bar-chart-o"></i> Plot <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a>Log Plot</a></li>
-                      <li><a>Histogram</a></li>    
-                      <li><a>Crossplot</a></li>
-                      <li><a>Multi-curve Crossplot</a></li>
-                      <li><a>Multi-well Correlation Viewer</a></li>
+                      <li><a href="#">Log Plot</a></li>
+                      <li><a href="#">Histogram</a></li>    
+                      <li><a href="#">Crossplot</a></li>
+                      <li><a href="#">Multi-curve Crossplot</a></li>
+                      <li><a href="#">Multi-well Correlation Viewer</a></li>
                     </ul>
-                  </li>
-                                         
+                  </li>                    
                 </ul>
               </div>
 
@@ -119,37 +118,36 @@
 
                   <li><a><i class="fa fa-calculator"></i> Calculation <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a>User-Defined Formula</a></li>
-                      <li><a>Basic Log Analysis Functions</a></li>    
-                      <li><a>Temperature Gradient</a></li>
-                      <li><a>True Vertical Depth Calculations</a></li>
-                      <li><a>True Vertical / Stratigraphic Thickness</a></li>
-                      <li><a>Curve from Zones / Parameters</a></li>      
-                      <li><a>Curve Integration</a></li>    
+                      <li><a href="#">User-Defined Formula</a></li>
+                      <li><a href="#">Basic Log Analysis Functions</a></li>    
+                      <li><a href="#">Temperature Gradient</a></li>
+                      <li><a href="#">True Vertical Depth Calculations</a></li>
+                      <li><a href="#">True Vertical / Stratigraphic Thickness</a></li>
+                      <li><a href="#">Curve from Zones / Parameters</a></li>      
+                      <li><a href="#">Curve Integration</a></li>    
                     </ul>
                     </li>
                   
                   <li><a><i class="fa fa-check"></i> Correction <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a>Schlumberger Corrections</a></li>
-                      <li><a>Baker Atlas Corrections</a></li>    
-                      <li><a>Halliburton Corrections</a></li>
-                      <li><a>Baker Hughes Inteq Corrections</a></li>
+                      <li><a href="#">Schlumberger Corrections</a></li>
+                      <li><a href="#">Baker Atlas Corrections</a></li>    
+                      <li><a href="#">Halliburton Corrections</a></li>
+                      <li><a href="#">Baker Hughes Inteq Corrections</a></li>
                     </ul>
                   </li>
                     
                   <li><a><i class="fa fa-american-sign-language-interpreting"></i> Interpretation <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a>Basic Log Analysis</a></li>
-                      <li><a>Clay Volume</a></li>    
-                      <li><a>Clay Volume Parameters</a></li>
-                      <li><a>Porosity and Water Saturation Parameters</a></li>
-                      <li><a>Cutoffs and Summation</a></li>
-                      <li><a>Multi-well Cutoffs and Summation</a></li>                               
-                      <li><a>Cased Hole</a></li>          
+                      <li><a href="#">Basic Log Analysis</a></li>
+                      <li><a href="#">Clay Volume</a></li>    
+                      <li><a href="#">Clay Volume Parameters</a></li>
+                      <li><a href="#">Porosity and Water Saturation Parameters</a></li>
+                      <li><a href="#">Cutoffs and Summation</a></li>
+                      <li><a href="#">Multi-well Cutoffs and Summation</a></li>
+                      <li><a href="#">Cased Hole</a></li>          
                     </ul>
-                  </li> 
-                                        
+                  </li>                 
                 </ul>
               </div>     
 
@@ -160,14 +158,13 @@
                       <button class="button_invi" style="height: 50px; margin-top: 30px;">CONTINUE</button>
                     </a>    
                     <a data-toggle="tooltip" data-placement="top" title="Start new section">             
-                      <button class="button_invi" style="height: 50px;">START</button>
+                      <button class="button_invi" style="height: 50px;">RUN</button>
                     </a>
                     <a data-toggle="tooltip" data-placement="top" title="Flowchart of process">
                       <button class="button_invi">Information</button>
                     </a>    
                 </div>
               </div>     
-                
             </div>
             <!-- /sidebar menu -->
 
@@ -201,7 +198,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                    <img src="images/img.jpg" alt="">Minh Vu
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -292,7 +289,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Form Upload </h3>
+                <h3>Database Upload </h3>
               </div>
 
               <div class="title_right">
@@ -313,7 +310,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Dropzone multiple file uploader</h2>
+                    <h2>Dropzone multiple database uploader</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -332,8 +329,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <p>Drag multiple files to the box below for multi upload or click to select files. This is for demonstration purposes only, the files are not uploaded to any server.</p>
-                    <form action="form_upload.html" class="dropzone"></form>
+                    <p>Drag multiple files to the box below for multi upload or click to select files.</p>
+                    <form action="database_upload.html" class="dropzone" style="padding: 100px;text-align: center"></form>
                     <br />
                     <br />
                     <br />
