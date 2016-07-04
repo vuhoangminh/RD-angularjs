@@ -261,7 +261,93 @@ function config($stateProvider, $urlRouterProvider) {
                 pageTitle: 'Animations'
             }
         })
-
+    
+        //----------------------------------------------------------------
+        //Customize from here
+    
+        //Database--------------------------------------------------------
+        .state('database', {
+            abstract: true,
+            url: "/database",
+            templateUrl: "views/common.html",
+        })    
+        .state('database.load', {
+            url: "/load_database",
+            templateUrl: "views/database-load.html",
+            data: {
+                pageTitle: 'Load Database'
+            }
+        })
+        .state('database.new', {
+            url: "/new_database",
+            templateUrl: "views/database-new.html",
+            data: {
+                pageTitle: 'New Database'
+            }
+        })
+        .state('database.location', {
+            url: "/locate_database",
+            templateUrl: "views/database-locate.html",
+            data: {
+                pageTitle: 'Set Default Location'
+            }
+        })
+    
+        //Well---------------------------------------------------------
+        .state('well', {
+            abstract: true,
+            url: "/well",
+            templateUrl: "views/common.html",
+        })    
+        .state('well.load', {
+            url: "/load_well",
+            templateUrl: "views/well-load.html",
+            data: {
+                pageTitle: 'Load Well'
+            }
+        })
+        .state('well.new', {
+            url: "/new_well",
+            templateUrl: "views/well-new.html",
+            data: {
+                pageTitle: 'New Well'
+            }
+        })
+        .state('well.select', {
+            url: "/select_well",
+            templateUrl: "views/well-select.html",
+            data: {
+                pageTitle: 'Select Well'
+            }
+        })    
+        //Curve--------------------------------------------------------
+        .state('curve', {
+            abstract: true,
+            url: "/curve",
+            templateUrl: "views/common.html",
+        })    
+        .state('curve.load', {
+            url: "/load_curve",
+            templateUrl: "views/curve-load.html",
+            data: {
+                pageTitle: 'Load Curve'
+            }
+        })
+        .state('curve.new', {
+            url: "/new_curve",
+            templateUrl: "views/curve-new.html",
+            data: {
+                pageTitle: 'New Curve'
+            }
+        })
+        .state('curve.select', {
+            url: "/select_curve",
+            templateUrl: "views/curve-select.html",
+            data: {
+                pageTitle: 'Select Curve'
+            }
+        })    
+        //Data---------------------------------------------------------    
 
 }
 angular
