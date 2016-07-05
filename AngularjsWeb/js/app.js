@@ -1,5 +1,5 @@
 
-  var app = angular.module('neuboard', [
+  var app = angular.module('smartdatics', [
         'ui.router',
         'ui.bootstrap',
         'ngAnimate',

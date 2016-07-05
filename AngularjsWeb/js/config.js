@@ -261,8 +261,8 @@ function config($stateProvider, $urlRouterProvider) {
                 pageTitle: 'Animations'
             }
         })
-    
-        //----------------------------------------------------------------
+
+//----------------------------------------------------------------
         //Customize from here
     
         //Database--------------------------------------------------------
@@ -347,11 +347,95 @@ function config($stateProvider, $urlRouterProvider) {
                 pageTitle: 'Select Curve'
             }
         })    
-        //Data---------------------------------------------------------    
+        //Data---------------------------------------------------------
+    
+    
+        //Parameter sets-----------------------------------------------
+        .state('parameter', {
+            abstract: true,
+            url: "/parameter",
+            templateUrl: "views/common.html",
+        })    
+        .state('parameter.clay', {
+            url: "/parameter_clay",
+            templateUrl: "views/parameter-clay.html",
+            data: {
+                pageTitle: 'Clay Volume Parameter Set'
+            }
+        })
+        .state('parameter.porosity', {
+            url: "/parameter_porosity",
+            templateUrl: "views/parameter-porosity.html",
+            data: {
+                pageTitle: 'Porosity and Water Saturation Parameter Set'
+            }
+        })
+        .state('parameter.cutoff', {
+            url: "/parameter_cutoff",
+            templateUrl: "views/parameter-cutoff.html",
+            data: {
+                pageTitle: 'Cutoffs and Summation Parameter Set'
+            }
+        })		
+        .state('parameter.mineral', {
+            url: "/parameter_mineral",
+            templateUrl: "views/parameter-mineral.html",
+            data: {
+                pageTitle: 'Mineral Solver Parameter Set'
+            }
+        })		
+        .state('parameter.basic', {
+            url: "/parameter_basic",
+            templateUrl: "views/parameter-basic.html",
+            data: {
+                pageTitle: 'Basic Log Analysis Parameter Set'
+            }
+        })	
 
+        //Plot-----------------------------------------------------------		
+        .state('plot', {
+            abstract: true,
+            url: "/plot",
+            templateUrl: "views/common.html",
+        })    
+        .state('plot.log', {
+            url: "/log_plot",
+            templateUrl: "views/plot-log.html",
+            data: {
+                pageTitle: 'Log Plot'
+            }
+        })		
+		.state('plot.histogram', {
+            url: "/histogram_plot",
+            templateUrl: "views/plot-histogram.html",
+            data: {
+                pageTitle: 'Histogram Plot'
+            }
+        })
+		.state('plot.cross', {
+            url: "/cross_plot",
+            templateUrl: "views/plot-cross.html",
+            data: {
+                pageTitle: 'Cross Plot'
+            }
+        })		
+		.state('plot.multicurve', {
+            url: "/multicurve_crossplot",
+            templateUrl: "views/plot-multicurve.html",
+            data: {
+                pageTitle: 'Multi-curve Cross Plot'
+            }
+        })		
+		.state('plot.multiwell', {
+            url: "/multiwell_correlationplot",
+            templateUrl: "views/plot-multiwell.html",
+            data: {
+                pageTitle: 'Multi-well Correlation Plot	'
+            }
+        })		
 }
 angular
-    .module('neuboard')
+    .module('smartdatics')
     .config(config)
     .run(function($rootScope, $state) {
         $rootScope.$state = $state;

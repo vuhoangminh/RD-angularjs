@@ -1,202 +1,210 @@
-<div class="sidebar-profile">
-    <div class="avatar">
-        <img class="img-circle profile-image" src="img/vac-1.jpg">
-        <i class="on border-dark animated bounceIn"></i>
-    </div>
-    <div class="profile-body dropdown">
-        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>Minh Vu <span class="caret"></span></h4></a>
-        <small class="title">Electrical Engineer</small>
-        <ul class="dropdown-menu animated fadeInRight" role="menu">
-            <li class="profile-progress">
-                <h5>
-                <span>80%</span>
-                  <small>Profile complete</small>
-                </h5>
-                <div class="progress progress-xs">
-                    <div class="progress-bar progress-bar-primary" style="width: 80%">
-                    </div>
-                </div>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="javascript:void(0);">
-                    <span class="icon"><i class="fa fa-user"></i>
-                                </span>My Account</a>
-            </li>
-            <li>
-                <a href="javascript:void(0);">
-                    <span class="icon"><i class="fa fa-envelope"></i>
-                                </span>Messages</a>
-            </li>
-            <li>
-                <a href="javascript:void(0);">
-                    <span class="icon"><i class="fa fa-cog"></i>
-                                </span>Settings</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="javascript:void(0);">
-                    <span class="icon"><i class="fa fa-sign-out"></i>
-                    </span>Logout</a>
-            </li>
-        </ul>
-    </div>
-</div>
-<nav>
-    
-    <!-- location directive.js | data-nav-toggle-sub maps to -->
-    <ul class="nav nav-stacked" data-nav-toggle-sub style="">
-        <h5 class="sidebar-header">Account</h5>    
-        <li ui-sref-active="active">
-            <a href="" ui-sref="index" title="Dashboard">
-                <i class="fa fa-fw fa-tachometer"></i> Dashboard
-            </a>
-        </li>  
-        <li class="nav-dropdown" ng-class="{active: $state.includes('mail')}">
-            <a href="" title="mail">
-                <i class="fa fa-fw fa-envelope-o"></i> Mail
-                 <span class="label label-primary label-circle pull-right">8</span>
-            </a>
-            <ul class="nav-sub" ng-class="{in: $state.includes('mail')}">
-                <li ui-sref-active="active">
-                    <a href="" ui-sref="mail.inbox" title="Mail Inbox">Inbox
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="mail.compose" title="Mail Compose">Compose Mail
-                   </a>
-                </li>
-            </ul>
-        </li>        
-        <h5 class="sidebar-header">Management</h5>
-        <li class="nav-dropdown" ng-class="{active: $state.includes('database')}">
-            <a href="" title="Database">
-                <i class="fa  fa-fw fa-database"></i> Database
-            </a>
-            <ul class="nav-sub" ng-class="{in: $state.includes('database')}">
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="database.load" title="Load Database">Load Database
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="database.new" title="New Database">New Database
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="database.location" title="Locate Database">Set Default Location
-                   </a>
-                </li>                
-            </ul>
-        </li>
-        <li class="nav-dropdown" ng-class="{active: $state.includes('well')}">
-            <a href="" title="Well">
-                <i class="fa  fa-fw fa-bars"></i> Well
-            </a>
-            <ul class="nav-sub" ng-class="{in: $state.includes('well')}">
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="well.load" title="Load Well">Load Wells from Database
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="well.new" title="New Well">New Well
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="well.select" title="Select Well">Select Well
-                   </a>
-                </li>                
-            </ul>
-        </li>   
-        <li class="nav-dropdown" ng-class="{active: $state.includes('curve')}">
-            <a href="" title="Curve">
-                <i class="fa  fa-fw fa-vine"></i> Curve
-            </a>
-            <ul class="nav-sub" ng-class="{in: $state.includes('curve')}">
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="curve.load" title="Load Curve">Load Curves from Well
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="curve.new" title="New Curve">New Curve
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="curve.select" title="Select Curve">Select Curve
-                   </a>
-                </li>                
-            </ul>
-        </li> 		
-        <li class="nav-dropdown" ng-class="{active: $state.includes('forms')}">
-            <a href="" title="Forms">
-                <i class="fa  fa-fw fa-edit"></i> Forms
-            </a>
-            <ul class="nav-sub" ng-class="{in: $state.includes('forms')}">
-                <li ui-sref-active="active">
-                    <a href="" ui-sref="forms.components" title="Components">Components
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="forms.validation" title="Validation">Validation
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="forms.mask" title="Mask">Mask
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="forms.wizard.step_one" title="Wizard">Wizard
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="forms.wysiwyg" title="WYSIWYG Editors">WYSIWYG Editors
-                   </a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-dropdown" ng-class="{active: $state.includes('charts')}">
-            <a href="" title="Charts">
-                <i class="fa  fa-fw fa-bar-chart-o"></i> Charts
-            </a>
-            <ul class="nav-sub" ng-class="{in: $state.includes('charts')}">
-                <li ui-sref-active="active">
-                    <a href="" ui-sref="charts.chartjs" title="Chart.js">Chart.js
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="charts.c3" title="C3 Charts">C3 Charts
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="charts.morris" title="Morris.js Charts">Morris.js Charts
-                   </a>
-                </li>
-                <li ui-sref-active="active">
-                    <a href="javascript:;" ui-sref="charts.sparkline" title="Sparkline Charts">Sparkline Charts
-                   </a>
-                </li>
-            </ul>
-        </li>
-                
-    </ul>
-</nav>
+<!-- <nav class="navbar navbar-default navbar-fixed-bottom"> -->
+<!-- <nav> -->
+	<div class="sidebar-profile">
+		<div class="avatar">
+			<img class="img-circle profile-image" src="img/vac-1.jpg">
+			<!-- <i class="on border-dark animated bounceIn"></i> -->
+		</div>
+		<div class="profile-body dropdown">
+			<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>Minh Vu <span class="caret"></span></h4></a>
+			<small class="title">Electrical Engineer</small>
+			<ul class="dropdown-menu animated fadeInRight" role="menu">
+				<li class="profile-progress">
+					<h5>
+					<span>80%</span>
+					  <small>Profile complete</small>
+					</h5>
+					<div class="progress progress-xs">
+						<div class="progress-bar progress-bar-primary" style="width: 80%">
+						</div>
+					</div>
+				</li>
+				<li class="divider"></li>
+				<li>
+					<a href="javascript:void(0);">
+						<span class="icon"><i class="fa fa-user"></i>
+									</span>My Account</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<span class="icon"><i class="fa fa-envelope"></i>
+									</span>Messages</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<span class="icon"><i class="fa fa-cog"></i>
+									</span>Settings</a>
+				</li>
+				<li class="divider"></li>
+				<li>
+					<a href="javascript:void(0);">
+						<span class="icon"><i class="fa fa-sign-out"></i>
+						</span>Logout</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<nav>
+	<!-- <nav class="navbar navbar-inverse navbar-fixed-top">     -->
+		<!-- location directive.js | data-nav-toggle-sub maps to -->
+		<ul class="nav nav-pills nav-stacked" data-nav-toggle-sub>
+			<h5 class="sidebar-header">Account</h5>
+			<li ui-sref-active="active">
+				<a href="" ui-sref="index" title="Dashboard">
+					<i class="fa fa-fw fa-tachometer"></i> Dashboard
+					<span class="label label-red label-circle pull-right">3</span>
+				</a>
+			</li> 
+			<li class="nav-dropdown" ng-class="{active: $state.includes('mail')}">
+				<a href="" title="mail">
+					<i class="fa fa-fw fa-envelope-o"></i> Mail
+					<span class="label label-primary label-circle pull-right">8</span>
+				</a>
+				<ul class="nav-sub" ng-class="{in: $state.includes('mail')}">
+					<li ui-sref-active="active">
+						<a href="" ui-sref="mail.inbox" title="Mail Inbox">Inbox
+					   </a>
+					</li>
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="mail.compose" title="Mail Compose">Compose Mail
+					   </a>
+					</li>
+				</ul>
+			</li>        
+			<h5 class="sidebar-header">Management</h5>
+			<li class="nav-dropdown" ng-class="{active: $state.includes('database')}">
+				<a href="" title="Database">
+					<i class="fa  fa-fw fa-database"></i> Database
+				</a>
+				<ul class="nav-sub" ng-class="{in: $state.includes('database')}">
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="database.load" title="Load Database">Load Database
+					   </a>
+					</li>
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="database.new" title="New Database">New Database
+					   </a>
+					</li>
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="database.location" title="Locate Database">Set Default Location
+					   </a>
+					</li>                
+				</ul>
+			</li>
+			<li class="nav-dropdown" ng-class="{active: $state.includes('well')}">
+				<a href="" title="Well">
+					<i class="fa  fa-fw fa-bars"></i> Well
+				</a>
+				<ul class="nav-sub" ng-class="{in: $state.includes('well')}">
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="well.load" title="Load Well">Load Wells from Database
+					   </a>
+					</li>
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="well.new" title="New Well">New Well
+					   </a>
+					</li>
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="well.select" title="Select Well">Select Well
+					   </a>
+					</li>                
+				</ul>
+			</li>
+			<li class="nav-dropdown" ng-class="{active: $state.includes('curve')}">
+				<a href="" title="Curve">
+					<i class="fa  fa-fw fa-vine"></i> Curve
+				</a>
+				<ul class="nav-sub" ng-class="{in: $state.includes('curve')}">
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="curve.load" title="Load Curve">Load Curves from Well
+					   </a>
+					</li>
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="curve.new" title="New Curve">New Curve
+					   </a>
+					</li>
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="curve.select" title="Select Curve">Select Curve
+					   </a>
+					</li>                
+				</ul>
+			</li>
+			
+			<h5 class="sidebar-header">Process</h5>
+			<li class="nav-dropdown" ng-class="{active: $state.includes('parameter')}">
+				<a href="" title="Parameter Set">
+					<i class="fa  fa-fw fa-pencil"></i> Parameter Set
+				</a>
+				<ul class="nav-sub" ng-class="{in: $state.includes('parameter')}">
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="parameter.clay" title="Clay Volume Parameter Set">Clay Volume
+					   </a>
+					</li>
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="parameter.porosity" title="Porosity and Water Saturation Parameter Set">Porosity and Water Saturation
+					   </a>
+					</li>				
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="parameter.cutoff" title="Cutoffs and Summation Parameter Set">Cutoffs and Summation
+					   </a>
+					</li>					
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="parameter.mineral" title="Mineral Solver Parameter Set">Mineral Solver
+					   </a>
+					</li>				
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="parameter.basic" title="Basic Log Analysis Parameter Set">Basic Log Analysis
+					   </a>
+					</li>				
+				</ul>
+			</li>	
+			<li class="nav-dropdown" ng-class="{active: $state.includes('plot')}">
+				<a href="" title="Plot">
+					<i class="fa  fa-fw fa-bar-chart-o"></i> Plot
+				</a>
+				<ul class="nav-sub" ng-class="{in: $state.includes('plot')}">
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="plot.log" title="Log Plot">Log Plot
+					   </a>
+					</li>
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="plot.histogram" title="Histogram Plot">Histogram Plot
+					   </a>
+					</li>				
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="plot.cross" title="Cross Plot">Cross Plot
+					   </a>
+					</li>				
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="plot.multicurve" title="Multi-curve Cross Plot">Multi-curve Cross Plot
+					   </a>
+					</li>				
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="plot.multiwell" title="Multi-well Correlation Plot">Multi-well Correlation Plot
+					   </a>
+					</li>				
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<h5 class="sidebar-header">Account Settings</h5>
+	<div class="setting-list">
+		<div class="row">
+			<div class="col-xs-8">
+				<label for="checkOne" class="control-label">Share your progress</label>
+			</div>
+			<div class="col-xs-4">
+				<input type="checkbox" class="js-switch" ui-switch="{size: 'small', color:'#27B6AF',secondaryColor: '#B3B8C3'}" ng-model="checkOne" checked id="checkOne" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-8">
+				<label for="checkTwo" class="control-label">Push Notifications</label>
+			</div>
+			<div class="col-xs-4">
+				<input type="checkbox" class="js-switch" ui-switch="{size: 'small',color:'#27B6AF',secondaryColor: '#B3B8C3'}" ng-model="checkTwo" id="checkTwo" />
+			</div>
+		</div>
+	</div>
+<!-- </nav> -->
 
-<!--
-<div class="setting-list">
-    <div class="row">
-        <div class="col-xs-8">
-            <label for="checkOne" class="control-label">Share your status</label>
-        </div>
-        <div class="col-xs-4">
-            <input type="checkbox" class="js-switch" ui-switch="{size: 'small', color:'#27B6AF',secondaryColor: '#B3B8C3'}" ng-model="checkOne" checked id="checkOne" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-8">
-            <label for="checkTwo" class="control-label">Push Notifications</label>
-        </div>
-        <div class="col-xs-4">
-            <input type="checkbox" class="js-switch" ui-switch="{size: 'small',color:'#27B6AF',secondaryColor: '#B3B8C3'}" ng-model="checkTwo" id="checkTwo" />
-        </div>
-    </div>
-</div>
--->

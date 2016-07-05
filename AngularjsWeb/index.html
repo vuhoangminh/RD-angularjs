@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Application Name - app.js and Main controller - controller.js-->
-<html ng-app="neuboard" ng-controller="MainCtrl as main">
+<html ng-app="smartdatics" ng-controller="MainCtrl as main">
 
 <head>
     <meta charset="utf-8">
@@ -37,8 +37,6 @@
     <!-- Drop Zone-->
     <link rel="stylesheet" href="js/plugins/dropzone/css/dropzone.css">
     <link rel="stylesheet" href="js/plugins/dropzone/css/basic.css">
-    <!-- Font Lato -->
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <!--  CSS Main -->
     <link href="css/main.css" rel="stylesheet">
     <!-- Feature detection -->
@@ -57,7 +55,7 @@
         <!-- Page wrapper -->
         <header id="header" ng-include="'views/header.html'" style="position:fixed;"></header>
         <!-- Left Sidebar Navigation -->
-        <aside class="sidebar sidebar-left" ng-include="'views/left-sidebar.html'"  style="position:fixed;"></aside>
+        <aside class="sidebar sidebar-left" ng-include="'views/left-sidebar.html'"></aside>
         <!-- Content wraper -->
         <section class="main-content-wrapper">
             <!-- Main content view  -->
@@ -70,10 +68,8 @@
     <!-- /Page wrapper-->
     <!-- Right Sidebar Navigation -->
     <aside ng-include="'views/right-sidebar.html'" id="sidebar-right"></aside>
-<!--
-    Config demo
-    <div id="config" class="config hidden-xs"  ng-include="'views/demo-settings.html'"></div>
--->
+    <!--Config demo-->
+    <<!-- div id="config" class="config hidden-xs"  ng-include="'views/demo-settings.html'"></div> -->
     <!-- jQuery -->
     <script src="js/vendor/jquery-2.1.1.min.js"></script>
      <!-- Angular -->

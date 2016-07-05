@@ -38,7 +38,7 @@ function pageTitle($rootScope, $timeout) {
         link: function(scope, element) {
             var listener = function(event, toState, toParams, fromState, fromParams) {
                 var title = 'NeuBoard - Responsive Admin Theme';
-                if (toState.data && toState.data.pageTitle) title = 'NeuBoard | ' + toState.data.pageTitle;
+                if (toState.data && toState.data.pageTitle) title = 'Smartdatics | ' + toState.data.pageTitle;
                 $timeout(function() {
                     element.text(title);
                 });
@@ -555,7 +555,7 @@ function switchTheme() {
  * Pass functions to module
  */
 angular
-    .module('neuboard')
+    .module('smartdatics')
     .directive('pageTitle', pageTitle)
     .directive('widgetToggle', widgetToggle)
     .directive('widgetClose', widgetClose)

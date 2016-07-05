@@ -70,7 +70,7 @@ h4,
 }
 h5,
 .h5 {
-  font-size: 0.813em;
+  font-size: 0.9em;
 }
 h6,
 .h6 {
@@ -404,7 +404,7 @@ canvas {
   display: block;
 }
 .sidebar .nav > li > .nav-sub > li > a {
-  padding-left: 45px;
+  padding-left: 48px;
 }
 .sidebar .nav > li > .nav-sub > li > .nav-sub > li > a {
   padding-left: 55px;
@@ -540,11 +540,11 @@ canvas {
   font-weight: 600;
   line-height: 20px;
   margin: 0;
-  padding: 10px 10px 5px;
+  padding: 15px 12px 10px;
   text-transform: uppercase;
 }
 .sidebar-left a {
-  color: #B3B8C3;
+  color: #787878;
 }
 .sidebar-left a:focus,
 .sidebar-left a:hover {
@@ -4437,4 +4437,8 @@ div.config h4 a:hover {
 
 
 /*Style add from here*/
+
+.label-red {
+    background-color: #e64d3d;
+}  
 tr:hover td {background:#C5C5C5}
