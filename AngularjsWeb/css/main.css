@@ -612,7 +612,7 @@ canvas {
   left: 4px;
 }
 .sidebar-mini .sidebar .sidebar-profile .profile-body.dropdown > .dropdown-menu:before {
-  left: 18%;
+  left: 100%;
 }
 .sidebar-mini .sidebar .avatar i {
   position: absolute;
