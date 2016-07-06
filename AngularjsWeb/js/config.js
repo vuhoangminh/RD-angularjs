@@ -432,6 +432,20 @@ function config($stateProvider, $urlRouterProvider) {
             data: {
                 pageTitle: 'Multi-well Correlation Plot	'
             }
+        })	
+		
+        //Correction-----------------------------------------------------------		
+        .state('correction', {
+            abstract: true,
+            url: "/correction",
+            templateUrl: "views/common.html",
+        })    
+        .state('correction.schlumberger', {
+            url: "/correction_schlumberger",
+            templateUrl: "views/correction-schlumberger.html",
+            data: {
+                pageTitle: 'Schlumberger Correction'
+            }
         })		
 }
 angular

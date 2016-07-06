@@ -25,6 +25,8 @@
     animation:slideOutLeft 0.5s both ease;   
 }
 
+.resizedTextbox {width: 100%; height: 100px}
+
 /* ANIMATIONS
 ============================================================================= */
 /* slide out to the left */
