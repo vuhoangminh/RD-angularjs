@@ -1,41 +1,30 @@
 <!-- form.html -->
 <div class="row">
-<div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-8 col-sm-offset-2">
 
-    <div id="form-container">
+        <div id="form-container">
 
-        <div class="page-header text-center">
-            <h2>SORA</h2>            
+            <div class="page-header text-center">
+                <h2>SORA | Test API</h2>            
+            </div>
+
+            <!-- use ng-submit to catch the form submission and use our Angular function -->
+            <form id="signup-form" ng-submit="processForm()">
+
+                <!-- our nested state views will be injected here -->
+                <div id="form-views" ui-view></div>
+            </form>
+
         </div>
-        
-        <!-- use ng-submit to catch the form submission and use our Angular function -->
-        <form id="signup-form" ng-submit="processForm()">
 
-            <!-- our nested state views will be injected here -->
-            <div id="form-views" ui-view></div>
-        </form>
+
+
+        <div ng-app="MyModule" ng-controller="formController">
+    <!--    <div ng-app="MyModule" ng-controller="MainCtrl">        -->
+          <p ng-show="loading">Loading...</p>
+          <p ng-hide="loading">Response: {{response}}</p>
+        </div>
+
 
     </div>
-
-    <!-- show our formData as it is being typed -->
-    <pre>
-        {{ formData.method }}
-    </pre>
-    <pre>
-        {{ formData.url }}
-    </pre>
-    <pre>
-        {{ formData.data }}
-    </pre>
-
-    
-
-    <div ng-app="MyModule" ng-controller="formController">
-<!--    <div ng-app="MyModule" ng-controller="MainCtrl">        -->
-      <p ng-show="loading">Loading...</p>
-      <p ng-hide="loading">Response: {{response}}</p>
-    </div>
-
-
-</div>
 </div>

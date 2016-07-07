@@ -1,24 +1,5 @@
-<!-- form-profile.html -->
-<!--
 <div class="form-group">
-    <label for="id">ID</label>
-    <input type="text" class="form-control" name="id" ng-model="formData.id">
-</div>
-
-<div class="form-group">
-    <label for="password">Password</label>
-    <input type="text" class="form-control" name="password" ng-model="formData.password">
-</div>
-
-<div class="form-group">
-    <label for="email">Email</label>
-    <input type="text" class="form-control" name="email" ng-model="formData.email">
-</div>
--->
-<script>
-</script>
-<div class="form-group">
-    <label for="method">Method</label>
+    <label for="method" >Method</label>
     <select class="form-control selectpicker" name="method" ng-model="formData.method" ng-init="formData.method='POST'">
 <!--      <option value="" selected disabled>Please select</option>-->
       <option value="POST">POST</option>
@@ -40,32 +21,27 @@
            placeholder="Place your full json data here" rows="3" ng-init="formData.data=postdata"></textarea>
 </div>
 
-<!--<button type="submit" class="btn btn-block btn-info"  onclick=sendRequest()>Send</button>-->
-<br>  
+ 
 <button type="submit" class="btn btn-block btn-info">Send</button>    
 
-    
-<!--
-<select class="c-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>    
-  <option value="3">Three</option>
-</select>    
-    
-<br>    
 
-<div class="form-group">
-    <label for="method">Example multiple select</label>
-    <select multiple class="form-control" name="method" ng-model="formData.method">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-</div>  
--->
+<br>
+<br>
+<label>Input Print</label>
+<pre>
+    {{ formData.method }}
+    {{ formData.url }}
+    {{ formData.data }}
+</pre> 
 
-
+<br>
+<br>
+<label>Response</label>
+<pre>
+    <div ng-app="MyModule" ng-controller="formController">
+    <!--    <div ng-app="MyModule" ng-controller="MainCtrl">        -->
+      <p ng-show="loading">Loading...</p>
+      <p ng-hide="loading">{{response}}</p>
+    </div>
+</pre>     
 
