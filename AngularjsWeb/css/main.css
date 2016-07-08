@@ -4442,4 +4442,20 @@ div.config h4 a:hover {
 .label-red {
     background-color: #e64d3d;
 }  
-tr:hover td {background:#C5C5C5}
+tr:hover:not(.nohover) td {background:#C5C5C5}
+
+. noborder, 
+.noborder tr, 
+.noborder th, 
+.noborder td, 
+.noborder thead, 
+.noborder tbody 
+{ border: none; }
+
+table.tablespacing {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
