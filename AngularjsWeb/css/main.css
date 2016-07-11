@@ -4458,4 +4458,11 @@ table.tablespacing {
 }
 
 .grow { transition: all .2s ease-in-out; }
+
+#draggablePanelList .panel-heading {
+	cursor: move;
+}
 .grow:hover { transform: scale(1.1); }
+
+table.hide1 .col1 { display: none; }
+table.hide2 .col2 { display: none; }
