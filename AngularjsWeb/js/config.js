@@ -278,6 +278,13 @@ function config($stateProvider, $urlRouterProvider) {
                 pageTitle: 'Load Database'
             }
         })
+        .state('database.loadselection', {
+            url: "/loadselection_database",
+            templateUrl: "views/database-loadselection.html",
+            data: {
+                pageTitle: 'Load Selection Database'
+            }
+        })		
         .state('database.new', {
             url: "/new_database",
             templateUrl: "views/database-new.html",

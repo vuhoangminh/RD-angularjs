@@ -1217,5 +1217,3 @@ function wizardCtrl($scope) {
         alert('information completed');
     };
 }
-
-

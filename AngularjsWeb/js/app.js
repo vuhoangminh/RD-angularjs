@@ -12,7 +12,6 @@
          'textAngular',
          'ui.switchery',
          'gridshore.c3js.chart'
-
     ])
 
 
