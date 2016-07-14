@@ -4465,5 +4465,15 @@ table.tablespacing {
 }
 .grow:hover { transform: scale(1.1); }
 
-table.hide1 .col1 { display: none; }
-table.hide2 .col2 { display: none; }
+.button-large {
+	 font-size: 20px;
+	 height:60px; 
+	 width:40%;
+}
+
+.button-small {
+	 font-size: 15px;
+	 height:40px; 
+	 width:20%;
+}
+

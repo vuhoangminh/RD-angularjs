@@ -2,9 +2,15 @@
     <h1>Recent Session</h1>
     <!-- <p class="description">Welcome to Smartdatics Solution</p> -->
     <div class="breadcrumb-wrapper hidden-xs">
-        <span class="label">You are here:</span>
         <ol class="breadcrumb">
-            <li class="active">Recent Session</li>
+			<li style="font-size:15px"><b>Start</b></li>
+			<li>Load Database</li>
+			<li>Load Curve</li>
+			<li>Parameter Set</li>
+			<li>Plot</li>
+			<li>Calculation & Correction</li>
+			<li>Interpretation</li>
+			<li>End</li>
         </ol>
     </div>
 </div>
@@ -19,7 +25,7 @@
                     </div>
                   </div> -->
 				<div class="panel-body">
-                    <table id="example" class="table table-striped table-bordered" datatable="" cellspacing="0" width="100%">
+                    <table id="myTable" class="table table-striped table-bordered" datatable="" cellspacing="0" width="100%">
 						<thead>
 							<tr>
 								<th>Project</th>
@@ -70,9 +76,9 @@
 				<div class="panel-body">
 					<form role="form">
 						<div style="text-align: center;">
-							<button type="submit" class="btn btn-primary grow" style="height:60px; width:40%; background-color: #4CAF50; font-size: 20px;">Load</button>
+							<button type="submit" class="btn btn-primary grow button-large" style="background-color: #4CAF50;">Load</button>
 							<span style="display:inline-block; width: 30px;"></span>
-							<button ui-sref="database.load" type="submit" class="btn btn-primary grow" style="height:60px; width:40%; background-color: #7cb9e8; font-size: 20px;">Start New Session</button>						
+							<button ui-sref="database.load" type="submit" class="btn btn-primary grow button-large" style="background-color: #7cb9e8;">Start New Session</button>						
 						</div>
 					</form>
 				</div>

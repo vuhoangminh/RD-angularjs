@@ -1,10 +1,15 @@
 <div class="pageheader">
-    <h1>Load Well</h1>
+    <h1>Load Curve</h1>
     <div class="breadcrumb-wrapper hidden-xs">
-        <span class="label">You are here:</span>
         <ol class="breadcrumb">
-            <!-- <li>LOad </li> -->
-            <li class="active">Load Well</li>
+			<li><a ui-sref="index">Start</a></li>
+			<li><a ui-sref="database.load">Load Database</a></li>
+			<li style="font-size:15px"><b>Load Curve</b></li>            
+			<li>Parameter Set</li>
+			<li>Plot</li>
+			<li>Calculation & Correction</li>
+			<li>Interpretation</li>
+			<li>End</li>
         </ol>
     </div>
 </div>
@@ -139,9 +144,9 @@
 				<div class="panel-body">
 					<form role="form">
 						<div style="text-align: center;">
-							<button ui-sref="parameter.clay" type="submit" class="btn btn-primary grow" style="height:60px; width:40%; background-color: #4CAF50; font-size: 20px;">Load</button>
+							<button ui-sref="parameter.clay" type="submit" class="btn btn-primary grow button-large" style="background-color: #4CAF50;">Load</button>
 							<span style="display:inline-block; width: 30px;"></span>
-							<button ui-sref="database.load" type="submit" class="btn btn-primary grow" style="height:60px; width:40%; background-color: gray; font-size: 20px;">Back</button>
+							<button ui-sref="database.load" type="submit" class="btn btn-primary grow button-large" style="background-color: gray;">Back</button>
 						</div>	
 					</form>
 				</div>

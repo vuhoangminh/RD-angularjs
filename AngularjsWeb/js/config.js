@@ -354,9 +354,7 @@ function config($stateProvider, $urlRouterProvider) {
                 pageTitle: 'Select Curve'
             }
         })    
-        //Data---------------------------------------------------------
-    
-    
+        
         //Parameter sets-----------------------------------------------
         .state('parameter', {
             abstract: true,
@@ -452,6 +450,20 @@ function config($stateProvider, $urlRouterProvider) {
             templateUrl: "views/correction-schlumberger.html",
             data: {
                 pageTitle: 'Schlumberger Correction'
+            }
+        })
+
+        //Interpretation-----------------------------------------------------------		
+        .state('interpretation', {
+            abstract: true,
+            url: "/interpretation",
+            templateUrl: "views/common.html",
+        })    
+        .state('interpretation.clay', {
+            url: "/interpretation_clay",
+            templateUrl: "views/interpretation-clay.html",
+            data: {
+                pageTitle: 'Clay interpretation'
             }
         })		
 }

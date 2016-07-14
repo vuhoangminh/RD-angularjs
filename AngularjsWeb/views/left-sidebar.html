@@ -116,7 +116,7 @@
 			<h5 class="sidebar-header">Management</h5>
 			<li ui-sref-active="active">
 				<a href="" ui-sref="index" title="Dashboard">
-					<i class="fa fa-fw fa-refresh"></i> Current Session
+					<i class="fa fa-fw fa-refresh"></i> Recent Session
 				</a>
 			</li> 
 			<li ng-class="{active: $state.includes('database')}">
@@ -134,14 +134,14 @@
 			<h5 class="sidebar-header">Process</h5>
 			<li class="nav-dropdown" ng-class="{active: $state.includes('parameter')}">
 				<a href="" title="Parameter Set">
-					<i class="fa  fa-fw fa-pencil"></i> Interpretation
+					<i class="fa  fa-fw fa-pencil"></i> Parameter Set
 				</a>
 				<ul class="nav-sub" ng-class="{in: $state.includes('parameter')}">
 					<li ui-sref-active="active">
 						<a href="javascript:;" ui-sref="parameter.clay" title="Clay Volume Parameter Set">Clay Volume
 					   </a>
 					</li>
-					<li ui-sref-active="active">
+<!-- 					<li ui-sref-active="active">
 						<a href="javascript:;" ui-sref="parameter.porosity" title="Porosity and Water Saturation Parameter Set">Porosity and Water Saturation
 					   </a>
 					</li>				
@@ -156,7 +156,7 @@
 					<li ui-sref-active="active">
 						<a href="javascript:;" ui-sref="parameter.basic" title="Basic Log Analysis Parameter Set">Basic Log Analysis
 					   </a>
-					</li>				
+					</li> -->				
 				</ul>
 			</li>	
 			<li class="nav-dropdown" ng-class="{active: $state.includes('plot')}">
@@ -168,7 +168,7 @@
 						<a href="javascript:;" ui-sref="plot.log" title="Log Plot">Log Plot
 					   </a>
 					</li>
-					<li ui-sref-active="active">
+<!-- 					<li ui-sref-active="active">
 						<a href="javascript:;" ui-sref="plot.histogram" title="Histogram Plot">Histogram Plot
 					   </a>
 					</li>				
@@ -183,7 +183,7 @@
 					<li ui-sref-active="active">
 						<a href="javascript:;" ui-sref="plot.multiwell" title="Multi-well Correlation Plot">Multi-well Correlation Plot
 					   </a>
-					</li>				
+					</li> -->				
 				</ul>
 			</li>
 			<li class="nav-dropdown" ng-class="{active: $state.includes('correction')}">
@@ -197,9 +197,21 @@
 					</li>
 				</ul>
 			</li>
+			
+			<li class="nav-dropdown" ng-class="{active: $state.includes('interpretation')}">
+				<a href="" title="Interpretation">
+					<i class="fa  fa-fw fa-bar-chart-o"></i> Interpretation
+				</a>
+				<ul class="nav-sub" ng-class="{in: $state.includes('interpretation')}">
+					<li ui-sref-active="active">
+						<a href="javascript:;" ui-sref="interpretation.clay" title="Clay Volume Interpretation">Clay Volume Interpretation
+					   </a>
+					</li>
+				</ul>
+			</li>			
 		</ul>
 	</nav>
-	<h5 class="sidebar-header">Account Settings</h5>
+<!-- 	<h5 class="sidebar-header">Account Settings</h5>
 	<div class="setting-list">
 		<div class="row">
 			<div class="col-xs-8">
@@ -217,6 +229,6 @@
 				<input type="checkbox" class="js-switch" ui-switch="{size: 'small',color:'#27B6AF',secondaryColor: '#B3B8C3'}" ng-model="checkTwo" id="checkTwo" />
 			</div>
 		</div>
-	</div>
+	</div> -->
 <!-- </nav> -->
 
