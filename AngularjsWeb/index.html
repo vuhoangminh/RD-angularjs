@@ -39,6 +39,8 @@
     <link rel="stylesheet" href="js/plugins/dropzone/css/basic.css">
     <!--  CSS Main -->
     <link href="css/main.css" rel="stylesheet">
+	<link href="css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="css/buttons.dataTables.min.css" rel="stylesheet">
 	<!--  Angular -->
 	<link rel="stylesheet" href="css/textAngular.css"/>
     <!-- Feature detection -->
@@ -49,30 +51,7 @@
     <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
 	
-</head>
-<!-- Current state name -->
-
-<body class="{{$state.current.name}}">
-    <!-- Page Wrapper-->
-    <section id="main-wrapper" class="theme-default">
-        <!-- Page wrapper -->
-        <header id="header" ng-include="'views/header.html'" style="position:fixed;"></header>
-        <!-- Left Sidebar Navigation -->
-        <aside class="sidebar sidebar-left" ng-include="'views/left-sidebar.html'"></aside>
-        <!-- Content wraper -->
-        <section class="main-content-wrapper">
-            <!-- Main content view  -->
-            <div ui-view></div>
-            <!-- Footer -->
-            <div ng-include="'views/footer.html'"></div>
-        </section>
-        <!-- /Content wraper-->
-    </section>
-    <!-- /Page wrapper-->
-    <!-- Right Sidebar Navigation -->
-    <aside ng-include="'views/right-sidebar.html'" id="sidebar-right"></aside>
-    <!--Config demo-->
-    <<!-- div id="config" class="config hidden-xs"  ng-include="'views/demo-settings.html'"></div> -->
+	
     <!-- jQuery -->
     <script src="js/vendor/jquery-2.1.1.min.js"></script>
      <!-- Angular -->
@@ -112,15 +91,22 @@
     <script src="js/plugins/switchery/switchery.min.js"></script>
     <script src="js/plugins/switchery/ui-switchery.js"></script>
     <!-- Maps -->
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
     <script src="js/plugins/ui-maps/ui-map.js"></script>
     <script src="js/plugins/jvectormap/js/jquery-jvectormap-2.0.1.min.js"></script>
     <script src="js/plugins/jvectormap/js/jquery-jvectormap-us-aea-en.js"></script>
     <!-- datatables -->
-    <script src="js/plugins/dataTables/js/jquery.dataTables.js"></script>
 	<script src="js/plugins/dataTables/js/jquery.dataTables.min.js"></script>
     <script src="js/plugins/dataTables/js/dataTables.bootstrap.js"></script>
     <script src="js/plugins/dataTables/js/angular-datatables.min.js"></script>
+	<script src="js/plugins/dataTables/js/dataTables.buttons.min.js"></script>
+	<script src="js/plugins/dataTables/js/buttons.flash.min.js"></script>
+	<script src="js/plugins/dataTables/js/jszip.min.js"></script>
+	<script src="js/plugins/dataTables/js/pdfmake.min.js"></script>
+	<script src="js/plugins/dataTables/js/vfs_fonts.js"></script>
+	<script src="js/plugins/dataTables/js/buttons.html5.min.js"></script>
+	<script src="js/plugins/dataTables/js/buttons.print.min.js"></script>
+	<script src="js/plugins/dataTables/js/dataTables.rowsGroup.js"></script>
     <!-- iCheck -->
     <script src="js/plugins/icheck/js/icheck.min.js"></script>
     <!-- Weather  -->
@@ -144,8 +130,32 @@
     <script src="js/directives.js"></script>
     <script src="js/controllers.js"></script>
 	
+</head>
+<!-- Current state name -->
+
+<body class="{{$state.current.name}}">
+    <!-- Page Wrapper-->
+    <section id="main-wrapper" class="theme-default">
+        <!-- Page wrapper -->
+        <header id="header" ng-include="'views/header.html'" style="position:fixed;"></header>
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar sidebar-left" ng-include="'views/left-sidebar.html'" style="position:fixed;"></aside>
+        <!-- Content wraper -->
+        <section class="main-content-wrapper">
+            <!-- Main content view  -->
+            <div ui-view></div>
+            <!-- Footer -->
+            <div ng-include="'views/footer.html'"></div>
+        </section>
+        <!-- /Content wraper-->
+    </section>
+    <!-- /Page wrapper-->
+    <!-- Right Sidebar Navigation -->
+    <aside ng-include="'views/right-sidebar.html'" id="sidebar-right"></aside>
+    <!--Config demo-->
+    <!-- div id="config" class="config hidden-xs"  ng-include="'views/demo-settings.html'"></div> -->
+	
 	<!-- Custom Script -->
 	<script src="js/custom.js"></script>
-	<script src="js/lobipanel.min.js"></script>
 </body>
 </html>
