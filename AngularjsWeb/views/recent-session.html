@@ -1,0 +1,90 @@
+<div class="pageheader">
+    <h1>Recent Session</h1>
+    <!-- <p class="description">Welcome to Smartdatics Solution</p> -->
+    <div class="breadcrumb-wrapper hidden-xs">
+        <ol class="breadcrumb">
+			<li style="font-size:15px"><b>Start</b></li>
+			<li>Load Database</li>
+			<li>Load Curve</li>
+			<li>Parameter Set</li>
+			<li>Plot</li>
+			<li>Calculation & Correction</li>
+			<li>Interpretation</li>
+			<li>End</li>
+        </ol>
+    </div>
+</div>
+
+<section id="main-content" class="animated fadeInRight">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+<!--                   <div class="panel-heading">
+                    <h3 class="panel-title">Table multiple database viewer</h3>
+                    <div class="actions pull-right">
+                    <i data-fullscreen-widget class="fa fa-expand"></i>
+                    </div>
+                  </div> -->
+				<div class="panel-body">
+					<table id="table-database" class="compact hover row-border" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th>Project</th>
+								<th>Well</th>
+								<th>Company</th>
+								<th>Depth</th>
+								<th>Date Created</th>
+								<th>Last Activity</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Bach Ho</td>
+								<td>AA-1A</td>
+								<td>VNA</td>
+								<td>3370-3917</td>
+								<td>10/08/2015 | 20:09</td>
+								<td>13/07/2016 | 21:09</td>
+							</tr>
+							<tr>
+								<td>Rang Dong</td>
+								<td>BB-5B</td>
+								<td>VNB</td>
+								<td>3010-3559</td>
+								<td>19/11/2015 | 17:05</td>
+								<td>01/05/2016 | 20:09</td>
+							</tr>
+							<tr>
+								<td>Su Tu Den</td>
+								<td>GT-1P</td>
+								<td>SCH</td>
+								<td>2000-3339</td>
+								<td>07/01/2013 | 10:45</td>
+								<td>12/02/2016 | 20:09</td>
+							</tr>						
+						</tbody>
+					</table>
+
+               </div>
+             </div>
+        </div>
+    </div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-default">			
+				<div class="panel-body">
+					<form role="form">
+						<div style="text-align: center;">
+							<button type="submit" class="btn btn-primary grow button-large" style="background-color: #4CAF50;">Load</button>
+							<span style="display:inline-block; width: 30px;"></span>
+							<button ui-sref="database.load" type="submit" class="btn btn-primary grow button-large" style="background-color: #7cb9e8;">Start New Session</button>						
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/custom.js"></script>
+</section>

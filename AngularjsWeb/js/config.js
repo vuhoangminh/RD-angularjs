@@ -5,7 +5,7 @@ function config($stateProvider, $urlRouterProvider) {
             url: "/index",
             templateUrl: "views/index.html",
             data: {
-                pageTitle: 'index'
+                pageTitle: 'Current Session'
             }
         })
         .state('ui', {

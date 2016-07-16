@@ -13,465 +13,412 @@
         </ol>
 	</div>
 </div>
+
 <section id="main-content" class="animated fadeInRight">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
+		<!-- <div class="col-md-12"> -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Single Clay Indicators</h3>
+					<h3 class="panel-title"><b>Single Clay Indicator</b></h3>
 				</div>
 				<div class="panel-body">
-					<form role="form">
-						<table class="noborder tablespacing" style="width: 100%">
-<!-- 							<thead>
-								<tr>
-									<th></th>
-									<th>Input</th>
-									<th>Output</th>
-								</tr>
-							</thead> -->
-							<tbody>
-								<tr class="nohover" class="noborder">
-									<td align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-											<span style="display:inline-block; width: 10px;"></span>
-											Gamma Rays
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:150px;">
-											  <option>GR</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>
-								</tr>
-
-								<tr class="nohover" class="noborder">
-									<td align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" name="check1">
-											<span style="display:inline-block; width: 10px;"></span>
-											Neutrons
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input2" ng-init="formData.input2='NPHI'" style="     width:150px;">
-											  <option>GR</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output2" ng-init="formData.output2='VCLN'" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>
-								</tr>
+					<table style="width:100%">
+						<col width="5%">
+						<col width="19%">
+						<col width="19%">
+						<col width="19%">
+						<col width="19%">
+						<tr class="nohover">
+							<th>Plot</th>
+							<th>Name</th>
+							<th></th>
+							<th>Input</th>
+							<th></th>
+							<th>Output</th>
+						</tr>
+						<tr class="nohover">
+							<td>
+								<input ichecks class="icheck" type="checkbox" checked="" name="check1">	
+							</td>
+							<td>								
+								Gamma Ray
+							</td>
+							<td></td>
+							<td>
 								
-								<tr class="nohover" class="noborder">
-									<td  align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" name="check3" checked="">
-											<span style="display:inline-block; width: 10px;"></span>
-											Resistivity
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input3" ng-init="formData.input3='IDPH'" style="     width:150px;">
-											  <option>GR</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output3" ng-init="formData.output3='VCLR'" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>
-								</tr>	
-
-								<tr align="left" class="nohover" class="noborder">
-									<td  align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" name="check4">
-											<span style="display:inline-block; width: 10px;"></span>
-											Resistivity
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input4" ng-init="formData.input4='SP'" style="     width:150px;">
-											  <option>GR</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output4" ng-init="formData.output4='VCLSP'" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>
-								</tr>
-
-								<tr align="left" class="nohover" class="noborder">
-									<td  align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" name="check5">
-											<span style="display:inline-block; width: 10px;"></span>
-											<input type="text" id="fname" name="fname" style="width:150px;">
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input5" style="width:150px;">
-											  <option>GR</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output5" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>
-								</tr>
+									<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									  <option>GR</option>
+									  <option>NPHI</option>
+									  <option>IDPH</option>
+									  <option>SP</option>
+									</select>
 								
-							</tbody>
-						</table>									
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">Double Clay Indicators</h3>
-				</div>
-				<div class="panel-body">
-					<form role="form">
-						<table class="noborder tablespacing" style="width: 100%">
-<!-- 							<thead>
-								<tr>
-									<th></th>
-									<th>Input</th>
-									<th>Output</th>
-								</tr>
-							</thead> -->
-							<tbody>
-								<tr class="nohover" class="noborder">
-									<td align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" checked="" name="check6">
-											<span style="display:inline-block; width: 10px;"></span>
-											Density
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input6" ng-init="formData.input6='RHOB'" style="     width:150px;">
-											  <option>RHOB</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output6" ng-init="formData.output6='NPHI'" style="  width:150px;">
-											  <option>NPHI</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>									
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output26" ng-init="formData.output26='VCLND'" style="  width:150px;">
-											  <option>VCLND</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>									
-								</tr>
-
+							</td>
+							
+							<td></td>
+							<td>
 								
-								<!-- <tr class="nohover" class="noborder">
-									<td align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" name="check7">
-											<span style="display:inline-block; width: 10px;"></span>
-											Density
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input7" ng-init="formData.input7='IDPH'" style="     width:150px;">
-											  <option>RHOB</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output7" ng-init="formData.output7='SP'" style="  width:150px;">
-											  <option>NPHI</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>									
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output27" ng-init="formData.output27='VCLN'" style="  width:150px;">
-											  <option>VCLND</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>									
-								</tr>								
- -->
-								<tr class="nohover" class="noborder">
-									<td align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" name="check7">
-											<span style="display:inline-block; width: 10px;"></span>
-											Sonic
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input7" ng-init="formData.input7='IDPH'" style="     width:150px;">
-											  <option>RHOB</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output7" ng-init="formData.output7='SP'" style="  width:150px;">
-											  <option>NPHI</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>									
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output27" ng-init="formData.output27='VCLN'" style="  width:150px;">
-											  <option>VCLND</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>									
-								</tr>								
-	
-								<tr align="left" class="nohover" class="noborder">
-									<td  align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" name="check9">
-											<span style="display:inline-block; width: 10px;"></span>
-											<input type="text" id="fname" name="fname" style="width:150px;">
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input9" style="width:150px;">
-											  <option>GR</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output9" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output29" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>									
-								</tr>	
-									
-							</tbody>
-						</table>									
-					</form>
+									<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
+									  <option>VCLGR</option>
+									  <option>VCLN</option>
+									  <option>VCLR</option>
+									  <option>VCLSP</option>
+									</select>
+																
+							</td>
+						</tr>	
+
+						<tr class="nohover">
+							<td>
+								<input ichecks class="icheck" type="checkbox" name="check1">	
+							</td>
+							<td>								
+								Neutron
+							</td>
+							<td></td>
+							<td>
+								
+									<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									  <option>GR</option>
+									  <option>NPHI</option>
+									  <option>IDPH</option>
+									  <option>SP</option>
+									</select>
+								
+							</td>
+							<td></td>
+							<td>
+								
+									<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
+									  <option>VCLGR</option>
+									  <option>VCLN</option>
+									  <option>VCLR</option>
+									  <option>VCLSP</option>
+									</select>
+																
+							</td>
+						</tr>
+
+						<tr class="nohover">
+							<td>
+								<input ichecks class="icheck" type="checkbox" checked="" name="check1">	
+							</td>
+							<td>								
+								Resistivity
+							</td>
+							<td></td>
+							<td>
+								
+									<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									  <option>GR</option>
+									  <option>NPHI</option>
+									  <option>IDPH</option>
+									  <option>SP</option>
+									</select>
+								
+							</td>
+							<td></td>
+							<td>
+								
+									<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
+									  <option>VCLGR</option>
+									  <option>VCLN</option>
+									  <option>VCLR</option>
+									  <option>VCLSP</option>
+									</select>
+																
+							</td>
+						</tr>							
+
+						<tr class="nohover">
+							<td>
+								<input ichecks class="icheck" type="checkbox" name="check1">	
+							</td>
+							<td>								
+								Resistivity
+							</td>
+							<td></td>
+							<td>
+								
+									<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									  <option>GR</option>
+									  <option>NPHI</option>
+									  <option>IDPH</option>
+									  <option>SP</option>
+									</select>
+								
+							</td>
+							<td></td>
+							<td>
+								
+									<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
+									  <option>VCLGR</option>
+									  <option>VCLN</option>
+									  <option>VCLR</option>
+									  <option>VCLSP</option>
+									</select>
+																
+							</td>
+						</tr>
+							
+						<tr class="nohover">
+							<td border-top: 0px solid #c73030;>
+								<input ichecks class="icheck" type="checkbox" name="check1">	
+							</td>
+							<td>								
+								<input type="text" id="fname" name="fname" style="width:80%;">
+							</td>
+							<td></td>
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+								  <option>GR</option>
+								  <option>NPHI</option>
+								  <option>IDPH</option>
+								  <option>SP</option>
+								</select>
+							</td>
+							<td></td>
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
+								  <option>VCLGR</option>
+								  <option>VCLN</option>
+								  <option>VCLR</option>
+								  <option>VCLSP</option>
+								</select>
+							</td>
+						</tr>
+					</table>
 				</div>
-			</div>
-		</div>
-	</div>
+             </div>
+        </div>
+    </div>
 
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
+		<!-- <div class="col-md-12"> -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Bad Hole Indicators</h3>
+					<h3 class="panel-title"><b>Double Clay Indicator</b></h3>
 				</div>
 				<div class="panel-body">
-					<form role="form">
-						<table class="noborder tablespacing" style="width: 100%">
-							<tbody>
-								<tr align="left" class="nohover" class="noborder">
-									<td  align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" name="check9">
-											<span style="display:inline-block; width: 10px;"></span>
-											<input type="text" id="fname" name="fname" style="width:150px;">
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input9" style="width:150px;">
-											  <option>GR</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output9" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output29" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>									
-								</tr>
+					<table style="width:100%">
+						<col width="5%">
+						<col width="19%">
+						<col width="19%">
+						<col width="19%">
+						<col width="19%">
+						<tr class="nohover">
+							<th>Plot</th>
+							<th>Name 1</th>
+							<th>Name 2</th>
+							<th>Input 1</th>
+							<th>Input 2</th>
+							<th>Output</th>						
+						</tr>
+						<tr class="nohover">
+							<td>
+								<input ichecks class="icheck" type="checkbox" checked="" name="check1">	
+							</td>
+							<td>								
+								Density
+							</td>
+							<td>Neutron</td>								
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									<option>GR</option>
+									<option>NPHI</option>
+									<option>IDPH</option>
+									<option>SP</option>
+								</select></td>
+							</td>
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									<option>GR</option>
+									<option>NPHI</option>
+									<option>IDPH</option>
+									<option>SP</option>
+								</select></td>
+							<td>							
+								<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
+									<option>VCLGR</option>
+									<option>VCLN</option>
+									<option>VCLR</option>
+									<option>VCLSP</option>
+								</select>
+							</td>
+						</tr>	
 
-								<!-- <tr align="left" class="nohover" class="noborder">
-									<td  align="left">								
-										<div class="radio">
-											<input ichecks class="icheck" type="checkbox" name="check9">
-											<span style="display:inline-block; width: 10px;"></span>
-											<input type="text" id="fname" name="fname" style="width:150px;">
-										</div>
-									</td>
-									<td  align="center">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.input9" style="width:150px;">
-											  <option>GR</option>
-											  <option>NPHI</option>
-											  <option>IDPH</option>
-											  <option>SP</option>
-											</select>
-										</div>
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output9" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>
-									<td  align="right">
-										<div class="form-group">
-											<select class="form-control selectpicker" name="method" ng-model="formData.output29" style="  width:150px;">
-											  <option>VCLGR</option>
-											  <option>VCLN</option>
-											  <option>VCLR</option>
-											  <option>VCLSP</option>
-											</select>
-										</div>									
-									</td>									
-								</tr>					 -->			
-							</tbody>
-						</table>									
-					</form>
+						<tr class="nohover">
+							<td>
+								<input ichecks class="icheck" type="checkbox" name="check1">	
+							</td>
+							<td>								
+								Density
+							</td>
+							<td>Sonic</td>								
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									<option>GR</option>
+									<option>NPHI</option>
+									<option>IDPH</option>
+									<option>SP</option>
+								</select></td>
+							</td>
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									<option>GR</option>
+									<option>NPHI</option>
+									<option>IDPH</option>
+									<option>SP</option>
+								</select></td>
+							<td>							
+								<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
+									<option>VCLGR</option>
+									<option>VCLN</option>
+									<option>VCLR</option>
+									<option>VCLSP</option>
+								</select>
+							</td>
+						</tr>							
+
+						<tr class="nohover">
+							<td>
+								<input ichecks class="icheck" type="checkbox" name="check1">	
+							</td>
+							<td>								
+								Sonic
+							</td>
+							<td>
+								Neutron
+							</td>
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									<option>GR</option>
+									<option>NPHI</option>
+									<option>IDPH</option>
+									<option>SP</option>
+								</select></td>
+							</td>
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									<option>GR</option>
+									<option>NPHI</option>
+									<option>IDPH</option>
+									<option>SP</option>
+								</select></td>
+							<td>							
+								<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
+									<option>VCLGR</option>
+									<option>VCLN</option>
+									<option>VCLR</option>
+									<option>VCLSP</option>
+								</select>
+							</td>
+						</tr>
+							
+						<tr class="nohover">
+							<td border-top: 0px solid #c73030;>
+								<input ichecks class="icheck" type="checkbox" name="check1">	
+							</td>
+							<td>								
+								<input type="text" id="fname" name="fname" style="width:80%;">
+							</td>
+							<td>								
+								<input type="text" id="fname" name="fname" style="width:80%;">
+							</td>
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									<option>GR</option>
+									<option>NPHI</option>
+									<option>IDPH</option>
+									<option>SP</option>
+								</select></td>
+							</td>
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									<option>GR</option>
+									<option>NPHI</option>
+									<option>IDPH</option>
+									<option>SP</option>
+								</select></td>
+							<td>							
+								<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
+									<option>VCLGR</option>
+									<option>VCLN</option>
+									<option>VCLR</option>
+									<option>VCLSP</option>
+								</select>
+							</td>
+						</tr>
+					</table>
 				</div>
-			</div>
-		</div>
-	</div>	
-
+             </div>
+        </div>
+    </div>
+	
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+		<!-- <div class="col-md-12"> -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><b>Bad Hole Indicator for Double Clay Indicator</b></h3>
+				</div>
+				<div class="panel-body">
+					<table style="width:100%">
+						<col width="5%">
+						<col width="19%">
+						<col width="19%">
+						<col width="19%">
+						<col width="19%">
+						<tr class="nohover">
+							<th>Plot</th>
+							<th>Name 1</th>
+							<th>Name 2</th>
+							<th>Input 1</th>
+							<th>Input 2</th>
+							<th>Output</th>						
+						</tr>							
+						<tr class="nohover">
+							<td border-top: 0px solid #c73030;>
+								<input ichecks class="icheck" type="checkbox" name="check1">	
+							</td>
+							<td>								
+								<input type="text" id="fname" name="fname" style="width:80%;">
+							</td>
+							<td>								
+								<input type="text" id="fname" name="fname" style="width:80%;">
+							</td>
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									<option>GR</option>
+									<option>NPHI</option>
+									<option>IDPH</option>
+									<option>SP</option>
+								</select></td>
+							</td>
+							<td>
+								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
+									<option>GR</option>
+									<option>NPHI</option>
+									<option>IDPH</option>
+									<option>SP</option>
+								</select></td>
+							<td>							
+								<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
+									<option>VCLGR</option>
+									<option>VCLN</option>
+									<option>VCLR</option>
+									<option>VCLSP</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+				</div>
+             </div>
+        </div>
+    </div>	
+	
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="panel panel-default">			
@@ -493,4 +440,5 @@
 		</div>
 	</div>
 	
+	<script src="js/custom.js"></script>	
 </section>
