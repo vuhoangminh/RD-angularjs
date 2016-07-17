@@ -41,6 +41,7 @@
     <link href="css/main.css" rel="stylesheet">
 	<link href="css/jquery.dataTables.min.css" rel="stylesheet">
 	<link href="css/buttons.dataTables.min.css" rel="stylesheet">
+	<link href="css/fixedHeader.dataTables.min.css" rel="stylesheet">
 	<!--  Angular -->
 	<link rel="stylesheet" href="css/textAngular.css"/>
     <!-- Feature detection -->
@@ -96,6 +97,7 @@
     <script src="js/plugins/jvectormap/js/jquery-jvectormap-2.0.1.min.js"></script>
     <script src="js/plugins/jvectormap/js/jquery-jvectormap-us-aea-en.js"></script>
     <!-- datatables -->
+	<!-- <script src="js/plugins/dataTables/js/jquery.js"></script> -->
 	<script src="js/plugins/dataTables/js/jquery.dataTables.min.js"></script>
     <script src="js/plugins/dataTables/js/dataTables.bootstrap.js"></script>
     <script src="js/plugins/dataTables/js/angular-datatables.min.js"></script>
@@ -107,6 +109,8 @@
 	<script src="js/plugins/dataTables/js/buttons.html5.min.js"></script>
 	<script src="js/plugins/dataTables/js/buttons.print.min.js"></script>
 	<script src="js/plugins/dataTables/js/dataTables.rowsGroup.js"></script>
+	<!-- <script src="js/plugins/dataTables/js/dataTables.fixedHeader.min.js"></script>
+	<script src="js/plugins/dataTables/js/dataTables.tableTools.js"></script> -->
     <!-- iCheck -->
     <script src="js/plugins/icheck/js/icheck.min.js"></script>
     <!-- Weather  -->
@@ -143,7 +147,8 @@
         <!-- Content wraper -->
         <section class="main-content-wrapper">
             <!-- Main content view  -->
-            <div ui-view></div>
+            <div ui-view>
+			</div>
             <!-- Footer -->
             <div ng-include="'views/footer.html'"></div>
         </section>
@@ -156,6 +161,6 @@
     <!-- div id="config" class="config hidden-xs"  ng-include="'views/demo-settings.html'"></div> -->
 	
 	<!-- Custom Script -->
-	<script src="js/custom.js"></script>
+	<!-- <script src="js/custom.js"></script> -->
 </body>
 </html>
