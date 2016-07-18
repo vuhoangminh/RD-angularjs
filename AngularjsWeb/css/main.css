@@ -3330,7 +3330,7 @@ label.valid {
 .modal-content {
   box-shadow: none;
   border-radius: 0;
-  border: solid 10px rgba(255, 255, 255, 0.6);
+  /* border: solid 10px rgba(255, 255, 255, 0.6); */
 }
 growl-notifications {
   position: fixed;
@@ -4481,6 +4481,11 @@ table.tablespacing {
 	 width:20%;
 }
 
+.button-form {
+	 width:40%;
+}
+
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -4532,4 +4537,8 @@ table.tablespacing {
 #table-recentsession tbody tr,
 #table-loaddatabase tbody tr {	
 	cursor: pointer;	
+}
+
+.form-group {
+    margin-bottom: 0px;
 }

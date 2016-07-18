@@ -177,7 +177,34 @@ $(document).ready(function () {
 
 // } );
 
+$(window).resize(function () {
+        var oSettings = table.fnSettings();
+        oSettings.oScroll.sY = calcDataTableHeight(); 
+        table.fnDraw();
+});
+   
+// var calcDataTableHeight = function() {
+	// return $(window).height()*35/100;
+// };
 
+var calcDataTableHeight = function() {
+    var workingHeight = $(window).height();
+    if (workingHeight <= 480 ) {
+        return $(window).height()*0.2;
+    }
+    if (workingHeight > 480  && workingHeight <= 768 ) {
+        return $(window).height()*0.33;
+    }
+    if (workingHeight > 768  && workingHeight <= 1080 ) {
+        return $(window).height()*0.45;
+    }
+    if (workingHeight > 1080  && workingHeight <= 2160 ) {
+        return $(window).height()*0.6;
+    }
+    if (workingHeight > 2160  && workingHeight <= 4320 ) {
+        return $(window).height()*0.8;
+    }
+};
 
 
 $(document).ready(function() {
@@ -187,12 +214,12 @@ $(document).ready(function() {
         "info":     false,
 		"bDestroy": true,
 		 "columns": [
-			{ "width": "18%" },
-			{ "width": "18%" },
-			{ "width": "18%" },
-			{ "width": "18%" },
-			{ "width": "16%" },
-			{ "width": "16%" }
+			{ "width": "15%" },
+			{ "width": "15%" },
+			{ "width": "15%" },
+			{ "width": "15%" },
+			{ "width": "20%" },
+			{ "width": "20%" }
 		],
 		dom: 'Bfrtip',
 		buttons: {
@@ -204,7 +231,9 @@ $(document).ready(function() {
             // footer: true
         // },
 		
-		"sScrollY": "300px",
+		//"sScrollY": "300px",
+		
+		 "sScrollY": calcDataTableHeight(),
         // "iDisplayLength": 25,
         // "bJQueryUI": true,
         // "bStateSave": true
@@ -240,22 +269,17 @@ $(document).ready(function() {
         "info":     false,
 		"bDestroy": true,
 		 "columns": [
-			{ "width": "18%" },
-			{ "width": "18%" },
-			{ "width": "18%" },
-			{ "width": "18%" },
-			{ "width": "16%" },
-			{ "width": "16%" }
+			{ "width": "15%" },
+			{ "width": "15%" },
+			{ "width": "15%" },
+			{ "width": "15%" },
+			{ "width": "20%" },
+			{ "width": "20%" }
 		],
 		dom: 'Bfrtip',
 		buttons: {
 			buttons: [ 'copy', 'excel', 'pdf', 'print' ]
 		},
-		// rowsGroup: [
-			// 'second:name',
-			// 0,
-			// 2
-		// ],
     } );
 	
 	$('#table-database tbody').on( 'click', 'tr', function () {
@@ -274,7 +298,7 @@ $(document).ready(function() {
 } );
 
 $(document).ready(function() {
-    $('#table-loaddatabase').DataTable( {
+    $('#table-curve').DataTable( {
         "paging":   false,
         "info":     false,
 		"bFilter": false,
@@ -286,6 +310,82 @@ $(document).ready(function() {
 			{ "width": "27%%" },
 			{ "width": "15%" },
 			{ "width": "15%" }
-		  ]		
+		  ],
+		// dom: 'Bfrtip',
+        // buttons: [
+            // {
+                // text: 'Save Inputs',
+                // action: function ( e, dt, node, config ) {
+                    // alert( 'Button activated' );
+                // }
+            // },
+			// {
+			// text: 'Load Inputs',
+                // action: function ( e, dt, node, config ) {
+                    // alert( 'Button activated' );
+                // }
+            // },
+        // ]		  
     } );
-} );	
+} );
+
+	
+
+
+$(document).ready(function() {
+	var icheckAll = $('input#icheck-all');
+	var icheck = $('input.icheck');
+
+	icheckAll.on('ifChecked ifUnchecked', function(event) {        
+		if (event.type == 'ifChecked') {
+			icheck.iCheck('check');
+		} else {
+			icheck.iCheck('uncheck');
+		}
+	});
+
+	icheck.on('ifChanged', function(event){
+		if(icheck.filter(':checked').length == icheck.length) {
+			icheckAll.prop('checked', 'checked');
+		} else {
+			icheckAll.prop('checked', false);
+		}
+		icheckAll.iCheck('update');
+	});
+});
+
+$(document).ready(function(){
+   $("#newDatabaseBtn").click(function(){
+       $("#newDatabasePopup").modal();
+   });
+});
+
+// $(window).ready(function() {
+    // var winHeight = 0;
+    // var docHeight = 0;
+    // winHeight = $(window).height();
+    // alert("Height window: " + winHeight);
+    // //var winWidth = $(window).width();
+    // //var docWidth = $(document).width(); 
+    // docHeight = $(document).height();
+    // alert("Height doc: " + docHeight);
+    // // var resolution = $(window).height()/$(document).height();
+    // // alert("Resolution: " + resolution);
+    // // var newDocHeight = docHeight*resolution;
+    // // alert("New Height: " + newDocHeight);
+    // $('html, body').css({
+        // 'overflow': 'auto',
+        // 'height': 'auto'
+    // });    
+    // if (docHeight - winHeight < 100) {
+        // //alert("test");
+        // $('html, body').css({
+            // 'overflow': 'hidden',
+            // 'height': '100%'
+        // });    
+    // }
+// });
+
+$(":file").filestyle({icon: false});
+
+   

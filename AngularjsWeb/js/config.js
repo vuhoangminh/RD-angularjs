@@ -368,6 +368,27 @@ function config($stateProvider, $urlRouterProvider) {
                 pageTitle: 'Clay Volume Parameter Set'
             }
         })
+		.state('parameter.clay.step_one', {
+            url: "/step_one",
+            templateUrl: "views/wizard/step_one.html",
+            data: {
+                pageTitle: 'Wizard'
+            }
+        })
+        .state('parameter.clay.step_two', {
+            url: "/step_two",
+            templateUrl: "views/wizard/step_two.html",
+            data: {
+                pageTitle: 'Wizard'
+            }
+        })
+        .state('parameter.clay.step_three', {
+            url: "/step_three",
+            templateUrl: "views/wizard/step_three.html",
+            data: {
+                pageTitle: 'Wizard'
+            }
+        })
         .state('parameter.porosity', {
             url: "/parameter_porosity",
             templateUrl: "views/parameter-porosity.html",

@@ -15,44 +15,6 @@
 </div>
 
 <section id="main-content" class="animated fadeInRight">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Form Wizard</h3>
-                    <div class="actions pull-right">
-                    <i data-fullscreen-widget class="fa fa-expand"></i>
-                        <i data-widget-toggle class="fa fa-chevron-down"></i>
-                        <i data-widget-close class="fa fa-times"></i>
-                    </div>
-                </div>
-                <div class="panel-body ng-wizard">
-                    <div class="steps">
-                        <ul>
-                            <li ui-sref-active="current">
-                                <a ui-sref=".step_one" class="btn-default"><span>1.</span> First Step</a>
-                            </li>
-                            <li ui-sref-active="current">
-                                <a ui-sref=".step_two" class="btn-default"><span>2.</span> Second Step</a>
-                            </li>
-                            <li ui-sref-active="current">
-                                <a ui-sref=".step_three" class="btn-default"><span>3.</span> Last Step</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <form ng-submit="processForm()">
-                            <div id="wizard-views" ui-view></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
-
-<section id="main-content" class="animated fadeInRight">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 		<!-- <div class="col-md-12"> -->
@@ -70,9 +32,9 @@
 						<tr class="nohover">
 							<th>Plot</th>
 							<th>Name</th>
-							
+							<th></th>
 							<th>Input</th>
-							
+							<th></th>
 							<th>Output</th>
 						</tr>
 						<tr class="nohover">
@@ -82,7 +44,7 @@
 							<td>								
 								Gamma Ray
 							</td>
-							
+							<td></td>
 							<td>
 								
 									<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
@@ -94,7 +56,7 @@
 								
 							</td>
 							
-							
+							<td></td>
 							<td>
 								
 									<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
@@ -114,7 +76,7 @@
 							<td>								
 								Neutron
 							</td>
-							
+							<td></td>
 							<td>
 								
 									<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
@@ -125,7 +87,7 @@
 									</select>
 								
 							</td>
-							
+							<td></td>
 							<td>
 								
 									<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
@@ -145,7 +107,7 @@
 							<td>								
 								Resistivity
 							</td>
-							
+							<td></td>
 							<td>
 								
 									<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
@@ -156,7 +118,7 @@
 									</select>
 								
 							</td>
-							
+							<td></td>
 							<td>
 								
 									<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
@@ -176,7 +138,7 @@
 							<td>								
 								Resistivity
 							</td>
-							
+							<td></td>
 							<td>
 								
 									<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
@@ -187,7 +149,7 @@
 									</select>
 								
 							</td>
-							
+							<td></td>
 							<td>
 								
 									<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
@@ -207,7 +169,7 @@
 							<td>								
 								<input type="text" id="fname" name="fname" style="width:80%;">
 							</td>
-							
+							<td></td>
 							<td>
 								<select class="form-control selectpicker" name="method" ng-model="formData.input1" ng-init="formData.input1='GR'" style="     width:80%;">
 								  <option>GR</option>
@@ -216,7 +178,7 @@
 								  <option>SP</option>
 								</select>
 							</td>
-							
+							<td></td>
 							<td>
 								<select class="form-control selectpicker" name="method" ng-model="formData.output1" ng-init="formData.output1='VCLGR'" style="  width:80%;">
 								  <option>VCLGR</option>
