@@ -4542,3 +4542,29 @@ table.tablespacing {
 .form-group {
     margin-bottom: 0px;
 }
+
+
+.pagination>.active>a {
+	background-color: white!important;
+	color: black!important;
+	border-color: black!important;
+}
+
+.pagination>li>a, .pagination>li>span {
+	color: black;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+	padding: 0px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white !important;
+    border: 0px solid #111 !important;
+    background-color: #585858;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #585858), color-stop(100%, #111));
+    background: -webkit-linear-gradient(top, #585858 0%, #111 100%);
+    background: -moz-linear-gradient(top, #585858 0%, #111 100%);
+    background: -ms-linear-gradient(top, #585858 0%, #111 100%);
+    background: -o-linear-gradient(top, #585858 0%, #111 100%);
+    background: linear-gradient(to bottom, #585858 0%, #111 100%)
+}

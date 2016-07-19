@@ -1210,6 +1210,205 @@ app.controller('sparklineCtrl', function($scope) {
 
 });
 
+app.controller('newDatabaseCtrl', function($scope) {
+    $scope.projects = [
+    {
+        "projectId": "Việt Nam 1",
+        "wells": [
+        {
+            "wellId": "Công ty ABC 1.1",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 1.1.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 1.1.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 1.1.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        },
+        {
+            "wellId": "Công ty ABC 1.2",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 1.2.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 1.2.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 1.2.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        },
+        {
+            "wellId": "Công ty ABC 1.3",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 1.3.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 1.3.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 1.3.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        }]
+    },
+    {
+        "projectId": "Việt Nam 2",
+        "wells": [
+        {
+            "wellId": "Công ty ABC 2.1",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 2.1.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 2.1.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 2.1.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        },
+        {
+            "wellId": "Công ty ABC 2.2",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 2.2.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 2.2.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 2.2.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        },
+        {
+            "wellId": "Công ty ABC 2.3",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 2.3.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 2.3.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 2.3.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        }]
+    },
+    {
+        "projectId": "Việt Nam 3",
+        "wells": [
+        {
+            "wellId": "Công ty ABC 3.1",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 3.1.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.1.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.1.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        },
+        {
+            "wellId": "Công ty ABC 3.2",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 3.2.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.2.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.2.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        },
+        {
+            "wellId": "Công ty ABC 3.3",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 3.3.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.3.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.3.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        }]
+    }]
+
+    $scope.myProject = $scope.projects[0];
+
+    $scope.currentProject = null;
+    $scope.currentWell = null;
+
+    $scope.setCurrentProject = function(project) {
+        $scope.currentProject = project;
+    }
+
+    $scope.setCurrentWell = function(well) {
+        $scope.currentWell = well;
+    }
+});
 
 function wizardCtrl($scope) {
     $scope.user = {};

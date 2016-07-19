@@ -92,7 +92,7 @@
 	
 </section>
 
-<div class="modal fade" id="newDatabasePopup" role="dialog">
+<div class="modal fade" id="newDatabasePopup" role="dialog" ng-controller="newDatabaseCtrl">
    <div class="modal-dialog">
    
          <!-- Modal content-->
@@ -106,29 +106,20 @@
 				<form role="form">
                     <div class="form-group">
                           <label for="project">Project</label>
-                          <select class="form-control" id="project">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                         </select>
+                          <select class="form-control" id="project" ng-model="selectedProject"
+                          		ng-options="project.projectId for project in projects"
+                          		ng-change="setCurrentProject(selectedProject)"></select>
                     </div>
                     <div class="form-group">
-                          <label for="well">Well</label>                              <select class="form-control" id="well">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                         </select>
+                          <label for="well">Well</label>                              
+                          <select class="form-control" id="well" ng-model="selectedWell"
+                          		ng-options="well.wellId for well in currentProject.wells"
+                          		ng-change="setCurrentWell(selectedWell)"></select>
                     </div>
                     <div class="form-group">
                           <label for="run">Run</label>
-                          <select class="form-control" id="run">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                         </select>
+                          <select class="form-control" id="run" ng-model="selectedRun"
+                          		ng-options="run.runId for run in currentWell.runs"></select>
                     </div>
 					<div class="form-group">
 						<label for="browse">Upload your database</label>

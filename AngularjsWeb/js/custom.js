@@ -187,32 +187,71 @@ $(window).resize(function () {
 	// return $(window).height()*35/100;
 // };
 
+var calcBootstrap = 
+
 var calcDataTableHeight = function() {
-    var workingHeight = $(window).height();
-    if (workingHeight <= 480 ) {
-        return $(window).height()*0.2;
+    var winHeight = $(window).height();
+    var docHeight = $(document).height();
+    if (docHeight < winHeight) {
+        return false;
     }
-    if (workingHeight > 480  && workingHeight <= 768 ) {
-        return $(window).height()*0.33;
+    else {
+        if (winHeight <= 480 ) {
+            return $(window).height()*0.2;
+        }
+        if (winHeight > 480  && winHeight <= 768 ) {
+            return $(window).height()*0.33;
+        }
+        if (winHeight > 768  && winHeight <= 1080 ) {
+            return $(window).height()*0.45;
+        }
+        if (winHeight > 1080  && winHeight <= 2160 ) {
+            return $(window).height()*0.6;
+        }
+        if (winHeight > 2160  && winHeight <= 4320 ) {
+            return $(window).height()*0.8;
+        }
     }
-    if (workingHeight > 768  && workingHeight <= 1080 ) {
-        return $(window).height()*0.45;
+};
+
+
+var calcDataTablePageLength = function() {
+    var winHeight = $(window).height();
+    var docHeight = $(document).height();
+    if (docHeight < winHeight) {
+        return false;
     }
-    if (workingHeight > 1080  && workingHeight <= 2160 ) {
-        return $(window).height()*0.6;
-    }
-    if (workingHeight > 2160  && workingHeight <= 4320 ) {
-        return $(window).height()*0.8;
+    else {
+        if (winHeight <= 480 ) {
+            return 3;
+        }
+        if (winHeight > 480  && winHeight <= 768 ) {
+            return 5;
+        }
+        if (winHeight > 768  && winHeight <= 1080 ) {
+            return 10;
+        }
+        if (winHeight > 1080  && winHeight <= 2160 ) {
+            return 15;
+        }
+        if (winHeight > 2160  && winHeight <= 4320 ) {
+            return 20;
+        }
     }
 };
 
 
 $(document).ready(function() {
+	// alert(isPaging());
 	// var width = document.getElementById('foo').offsetWidth;
 	var table=$('#table-recentsession').DataTable( {
-        "paging":   false,
+		
+        // "paging":   isPaging(),
+		"pagingType": "numbers",
         "info":     false,
 		"bDestroy": true,
+		// "pageLength": 10,
+		"pageLength": calcDataTablePageLength(),
 		 "columns": [
 			{ "width": "15%" },
 			{ "width": "15%" },
@@ -231,13 +270,19 @@ $(document).ready(function() {
             // footer: true
         // },
 		
-		//"sScrollY": "300px",
+		// "sScrollY": calcDataTableHeight(),
+		// "sScrollY": "10vh",
+		scrollCollapse: true,
 		
-		 "sScrollY": calcDataTableHeight(),
-        // "iDisplayLength": 25,
+		// "sScrollY": calcDataTableHeight(),
+        "iDisplayLength": 25,
         // "bJQueryUI": true,
         // "bStateSave": true
     } );
+	
+	$(window).bind('resize', function () {
+		table.fnAdjustColumnSizing();
+	} );
 
 	$('#table-recentsession tbody').on( 'click', 'tr', function () {
         if ( $(this).hasClass('selected') ) {
@@ -248,9 +293,6 @@ $(document).ready(function() {
             $(this).addClass('selected');
         }
     } );
-	
-		
-	$('#table-recentsession').DataTable().columns.adjust().draw();
  
     $('#button').click( function () {
         table.row('.selected').remove().draw( false );
@@ -259,15 +301,31 @@ $(document).ready(function() {
 	// Customize search box here
 	$('#myInputTextField').keyup(function(){
       table.search($(this).val()).draw() ;
-})
+	});
+	
+	// var isPaging = function(){
+		// if (table.data().count()/6>10){
+			// return true;
+		// }
+		// else {
+			// return false;
+		// }
+	// };
+	
+	// alert(isPaging());
+	
+
 } );
 
 
 $(document).ready(function() {
     var table=$('#table-database').DataTable( {
-        "paging":   false,
+        // "paging":   false,
+		"pagingType": "numbers",
         "info":     false,
 		"bDestroy": true,
+		// "pageLength": 10,
+		"pageLength": calcDataTablePageLength(),
 		 "columns": [
 			{ "width": "15%" },
 			{ "width": "15%" },
