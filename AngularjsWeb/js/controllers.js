@@ -1210,13 +1210,19 @@ app.controller('sparklineCtrl', function($scope) {
 
 });
 
-app.controller('newDatabaseCtrl', function($scope) {
+app.controller('newDatabaseCtrl', function($scope, $http, $templateCache) {
+    /*var getPath = 'http://192.168.1.150:8080/smartdatics-sora/restapi/uploadData/all';
+    $http.get(getPath).then(function(response) {
+        $scope.projects = response.data;
+        a = response.data;
+        console.log(a);
+    });*/
     $scope.projects = [
     {
-        "projectId": "Việt Nam 1",
+        "projectId": "VungTau",
         "wells": [
         {
-            "wellId": "Công ty ABC 1.1",
+            "wellId": "Cong ty ABC 1.1",
             "runs": [
             {
                     "runId": "Test tiếng việt 1.1.1",
@@ -1235,7 +1241,7 @@ app.controller('newDatabaseCtrl', function($scope) {
             }]
         },
         {
-            "wellId": "Công ty ABC 1.2",
+            "wellId": "Cong ty ABC 1.2",
             "runs": [
             {
                     "runId": "Test tiếng việt 1.2.1",
@@ -1254,7 +1260,7 @@ app.controller('newDatabaseCtrl', function($scope) {
             }]
         },
         {
-            "wellId": "Công ty ABC 1.3",
+            "wellId": "Cong ty ABC 1.3",
             "runs": [
             {
                     "runId": "Test tiếng việt 1.3.1",
@@ -1274,7 +1280,7 @@ app.controller('newDatabaseCtrl', function($scope) {
         }]
     },
     {
-        "projectId": "Việt Nam 2",
+        "projectId": "DaLat",
         "wells": [
         {
             "wellId": "Công ty ABC 2.1",
@@ -1335,7 +1341,68 @@ app.controller('newDatabaseCtrl', function($scope) {
         }]
     },
     {
-        "projectId": "Việt Nam 3",
+        "projectId": "DaNang",
+        "wells": [
+        {
+            "wellId": "Công ty ABC 3.1",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 3.1.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.1.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.1.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        },
+        {
+            "wellId": "Công ty ABC 3.2",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 3.2.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.2.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.2.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        },
+        {
+            "wellId": "Công ty ABC 3.3",
+            "runs": [
+            {
+                    "runId": "Test tiếng việt 3.3.1",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.3.2",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            },
+            {
+                    "runId": "Test tiếng việt 3.3.3",
+                    "lastActivity": 1468490183000,
+                    "filePath":"" 
+            }]
+        }]
+    },
+    {
+        "projectId": "VungTau2",
         "wells": [
         {
             "wellId": "Công ty ABC 3.1",
@@ -1395,20 +1462,201 @@ app.controller('newDatabaseCtrl', function($scope) {
             }]
         }]
     }]
-
-    $scope.myProject = $scope.projects[0];
-
+    //$scope.myProject = $scope.projects[0];
     $scope.currentProject = null;
     $scope.currentWell = null;
-
+    function string2ProjObj(project) {
+        for(var i = 0; i < $scope.projects.length; i++) {
+            if (project === $scope.projects[i].projectId)
+                return $scope.projects[i];
+        }
+        return false; 
+    }
+    function string2WellObj(well) {
+        for(var i = 0; i < $scope.currentProject.wells.length; i++) {
+            if (well === $scope.currentProject.wells[i].wellId)
+                return $scope.currentProject.wells[i];
+        }
+        return false; 
+    }
     $scope.setCurrentProject = function(project) {
+        $("#hehe").css('display', 'none');
+        $("#well").val('');
+        $("#run").val('');
+        if ((typeof project) == "string") {
+            project = string2ProjObj(project);
+            if (!project) {
+                $scope.currentProject = null;
+                return;
+            }
+        } 
         $scope.currentProject = project;
+        console.log(project);   
     }
-
     $scope.setCurrentWell = function(well) {
+        $("#hehe").css('display', 'none');
+        $("#run").val('');
+        if ((typeof well) == "string") {
+            well = string2WellObj(well);
+            if (!well) {
+                $scope.currentWell = null;
+                return;
+            }
+        } 
         $scope.currentWell = well;
+        console.log(well);
     }
+    $scope.setCurrentRun = function(run) {
+        $("#hehe").css('display', 'none');
+    }
+    $("#myUpload").on('click', function() {
+        for (var i = 0; i < $scope.currentWell.runs.length; i++) {
+            if ($("#run").val() == $scope.currentWell.runs[i].runId) {
+                $("#hehe").css('display', 'block');
+            }
+        } 
+    });
+    $(".myReset").on('click', function() {
+        console.log("reset");
+		$("#hehe").css('display', 'none');
+        $("#project").val('');
+        $("#well").val('');
+        $("#run").val('');
+    });
 });
+
+app.controller('tableCtrl', function($scope, $http) {
+
+    // var getPath = 'http://192.168.1.150:8080/smartdatics-sora/restapi/uploadData/all';
+    // $http.get(getPath).then(function(response) {
+        // $scope.projects = response.data;
+    // });  
+    $scope.projects = 
+   [
+ {
+   "projectId": "Bạch Hổ",
+   "wellId": "Well 1",
+   "runId": "Run 1",
+   "createdDate": 1469001331000,
+   "lastActivity": 1469001317000
+ },
+ {
+   "projectId": "Bạch Hổ",
+   "wellId": "Well 1",
+   "runId": "Run 2",
+   "depth": " 1500.0000- 3500.0000",
+   "createdDate": 1469001356000,
+   "lastActivity": 1469001345000
+ },
+ {
+   "projectId": "Bạch Hổ",
+   "wellId": "Well 2",
+   "runId": "Run 1",
+   "depth": " 1500.0000- 3500.0000",
+   "createdDate": 1469001380000,
+   "lastActivity": 1469001367000
+ },
+ {
+   "projectId": "Bạch Hổ",
+   "wellId": "Well 2",
+   "runId": "Run 2",
+   "depth": " 1500.0000- 3500.0000",
+   "createdDate": 1469001403000,
+   "lastActivity": 1469001393000
+ },
+ {
+   "projectId": "Hồng Ngọc (Ruby)",
+   "wellId": "Well 1",
+   "runId": "Run 1",
+   "depth": " 3370.0000- 3917.0000",
+   "createdDate": 1469002039000,
+   "lastActivity": 1469002025000
+ },
+ {
+   "projectId": "Hồng Ngọc (Ruby)",
+   "wellId": "Well 2",
+   "runId": "Run 1",
+   "depth": " 3010.0000- 3559.0000",
+   "createdDate": 1469002062000,
+   "lastActivity": 1469002053000
+ },
+ {
+   "projectId": "Sư Tử Đen",
+   "wellId": "Well 1",
+   "runId": "Run 1",
+   "depth": " 3370.0000- 3917.0000",
+   "createdDate": 1469001936000,
+   "lastActivity": 1469001927000
+ },
+ {
+   "projectId": "Sư Tử Đen",
+   "wellId": "Well 1",
+   "runId": "Run 2",
+   "depth": " 1480.1680- 4600.0680",
+   "createdDate": 1469001964000,
+   "lastActivity": 1469001947000
+ },
+ {
+   "projectId": "Sư Tử Đen",
+   "wellId": "Well 2",
+   "runId": "Run 2",
+   "depth": " 1500.0000- 3500.0000",
+   "createdDate": 1469001449000,
+   "lastActivity": 1469001434000
+ },
+ {
+   "projectId": "Sư Tử Đen",
+   "wellId": "Well 3",
+   "runId": "Run 1",
+   "depth": " 1480.1680- 4600.0680",
+   "createdDate": 1469001989000,
+   "lastActivity": 1469001979000
+ }
+];
+   
+	// $scope.update=[];
+    // $scope.count = 0;
+    // for (var i = 0; i < $scope.projects.length; i++) {
+        // var projectId = $scope.projects[i].projectId;
+        // //alert(projectId);
+        // var wells = $scope.projects[i].wells;
+        // for (var j = 0; j < wells.length; j++) {
+             // var wellId = wells[j].wellId;
+             // //alert(wellId);
+             // var runs = wells[j].runs;
+			// if (runs) {
+				// for(var z = 0; z < runs.length; z++ ) {
+					// var runId = runs[z].runId;
+					// //alert("projectId: " + projectId);
+					// //alert("wellId: " + wellId);
+					// //alert("runId: " + runId);
+					// var lastActivity = runs[z].lastActivity;
+					// //alert("lastActivity: " + lastActivity);
+					// var createdDate = runs[z].createdDate;
+					// //alert("created Date: " + createdDate);
+					// if (runs[z].otherFields) {
+						// var STRT_M = runs[z].otherFields.STRT_M;
+						// //alert("Start Depth: " + STRT_M);
+						// var STOP_M = runs[z].otherFields.STOP_M;
+						// //alert("Stop Depth: " + STOP_M);
+						// var depth = STRT_M + "-" + STOP_M;
+						// //alert("Depth: " + Depth);
+						// $scope.update.push({projectId, wellId, runId, depth, createdDate, lastActivity});
+						// $scope.count++;
+						
+					// }   
+					// else {  
+						// $scope.update.push({projectId, wellId, runId, createdDate, lastActivity}); 
+						// $scope.count++;
+					// }
+				// }
+			// }
+        // }
+    // }   
+    // alert($scope.count);
+
+});
+
 
 function wizardCtrl($scope) {
     $scope.user = {};

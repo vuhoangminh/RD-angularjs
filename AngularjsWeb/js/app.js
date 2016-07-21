@@ -5,13 +5,15 @@
         'ngAnimate',
         'tc.chartjs',
         'growlNotifications',
-         'ui.tree',
-         'ui.map',
-         'datatables',
-         'tien.clndr',
-         'textAngular',
-         'ui.switchery',
-         'gridshore.c3js.chart'
+        'ui.tree',
+        'ui.map',
+        'datatables',
+        'tien.clndr',
+        'textAngular',
+        'ui.switchery',
+        'gridshore.c3js.chart',
+		'ngSanitize',
+        'mgcrea.ngStrap'
     ])
 
 

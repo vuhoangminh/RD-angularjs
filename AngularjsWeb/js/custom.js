@@ -187,7 +187,7 @@ $(window).resize(function () {
 	// return $(window).height()*35/100;
 // };
 
-var calcBootstrap = 
+
 
 var calcDataTableHeight = function() {
     var winHeight = $(window).height();
@@ -239,6 +239,7 @@ var calcDataTablePageLength = function() {
         }
     }
 };
+
 
 
 $(document).ready(function() {
@@ -302,57 +303,42 @@ $(document).ready(function() {
 	$('#myInputTextField').keyup(function(){
       table.search($(this).val()).draw() ;
 	});
-	
-	// var isPaging = function(){
-		// if (table.data().count()/6>10){
-			// return true;
-		// }
-		// else {
-			// return false;
-		// }
-	// };
-	
-	// alert(isPaging());
-	
-
 } );
 
 
 $(document).ready(function() {
-    var table=$('#table-database').DataTable( {
-        // "paging":   false,
-		"pagingType": "numbers",
-        "info":     false,
-		"bDestroy": true,
-		// "pageLength": 10,
-		"pageLength": calcDataTablePageLength(),
-		 "columns": [
-			{ "width": "15%" },
-			{ "width": "15%" },
-			{ "width": "15%" },
-			{ "width": "15%" },
-			{ "width": "20%" },
-			{ "width": "20%" }
-		],
-		dom: 'Bfrtip',
-		buttons: {
-			buttons: [ 'copy', 'excel', 'pdf', 'print' ]
-		},
-    } );
-	
-	$('#table-database tbody').on( 'click', 'tr', function () {
-        if ( $(this).hasClass('selected') ) {
-            $(this).removeClass('selected');
-        }
-        else {
-            table.$('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
-        }
-    } );
- 
-    $('#button').click( function () {
-        table.row('.selected').remove().draw( false );
-    } );
+    
+   var table=$('#table-database').DataTable( {
+       "paging":   false,
+       "info":     false,
+        "bDestroy": true,
+		"ordering": false,
+        "columns": [
+            { "width": "15%"},
+            { "width": "15%"},
+            { "width": "15%"},
+            { "width": "15%"},
+            { "width": "20%"},
+            { "width": "20%"}
+        ],
+        dom: 'Bfrtip',
+        buttons: {
+            buttons: [ 'copy', 'excel', 'pdf', 'print' ]
+        },
+   } );
+    $('#table-database tbody').on( 'click', 'tr', function () {
+       if ( $(this).hasClass('selected') ) {
+           $(this).removeClass('selected');
+       }
+       else {
+           table.$('tr.selected').removeClass('selected');
+           $(this).addClass('selected');
+       }
+   } );
+
+   $('#button').click( function () {
+       table.row('.selected').remove().draw( false );
+   } );
 } );
 
 $(document).ready(function() {

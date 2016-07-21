@@ -14,148 +14,116 @@
     </div>
 </div>
 
+<section id="main-content" class="animated fadeInRight" ng-controller="tableCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                   <table id="table-database" class="compact hover row-border" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Well</th>
+                                <th>Run</th>
+                                <th>Depth</th>
+                                <th>Date Created</th>
+                                <th>Last Activity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="x in projects">
+                                    <td>{{ x.projectId }}</td>
+                                    <td>{{ x.wellId }}</td>
+                                    <td>{{ x.runId }}</td>
+                                    <td>{{ x.depth }}</td>
+                                    <td>{{ x.createdDate }}</td>
+                                    <td>{{ x.lastActivity }}</td>    
+                            </tr>    
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+       </div>
+   </div>
 
-
-<section id="main-content" class="animated fadeInRight">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="panel panel-default">
-				<div class="panel-body">
-                    <table id="table-database" class="compact hover row-border" cellspacing="0" width="100%">
-						<thead>
-							<tr>
-								<th>Project</th>
-								<th>Well</th>
-								<th>Run</th>
-								<th>Depth</th>
-								<th>Date Created</th>
-								<th>Last Activity</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<tr>
-								<td>Bach Ho</td>
-								<td>AA-1A</td>
-								<td>VNA</td>
-								<td>3370-3917</td>
-								<td>10/08/2015 | 20:09</td>
-								<td>13/07/2016 | 21:09</td>
-							</tr>
-							<tr>
-								<td>Rang Dong</td>
-								<td>BB-5B</td>
-								<td>VNB</td>
-								<td>3010-3559</td>
-								<td>19/11/2015 | 17:05</td>
-								<td>01/05/2016 | 20:09</td>
-							</tr>
-							<tr>
-								<td>Su Tu Den</td>
-								<td>GT-1P</td>
-								<td>SCH</td>
-								<td>2000-3339</td>
-								<td>07/01/2013 | 10:45</td>
-								<td>12/02/2016 | 20:09</td>
-							</tr>						
-						</tbody>
-					</table>
-
-				</div>
-             </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">            
+                <div class="panel-body">
+                    <form role="form">
+                        <div style="text-align: center;">
+                            <button ui-sref="" type="submit" class="btn btn-primary grow button-large" style="background-color: #e32636 ;" id="newDatabaseBtn">Add New</button>
+                            <span style="display:inline-block; width: 30px;"></span>
+                            <button ui-sref="database.loadselection" type="submit" class="btn btn-primary grow button-large" style="background-color: #4CAF50 ;">Load</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="panel panel-default">			
-				<div class="panel-body">
-					<form role="form">
-						<div style="text-align: center;">
-							<button ui-sref="" type="submit" class="btn btn-primary grow button-large" style="background-color: #e32636;" id="newDatabaseBtn">Add New</button>
-							<span style="display:inline-block; width: 30px;"></span>
-							<button ui-sref="database.loadselection" type="submit" class="btn btn-primary grow button-large" style="background-color: #4CAF50;">Load</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-<!-- 	<form action="/file-upload" class="dropzone">
-		<div class="fallback">
-			<input name="file" type="file" multiple />
-		</div>
-	</form> -->
-	<script src="js/custom.js"></script>
-	
+    
+    
+<!--     <form action="/file-upload" class="dropzone">
+        <div class="fallback">
+            <input name="file" type="file" multiple />
+        </div>
+    </form> -->
+    <script src="js/custom.js"></script>
+    
 </section>
 
 <div class="modal fade" id="newDatabasePopup" role="dialog" ng-controller="newDatabaseCtrl">
-   <div class="modal-dialog">
-   
-         <!-- Modal content-->
-         <div class="modal-content">
-
-            <div class="modal-header" style="padding:30px 50px; text-align: center; background-color: #e32636;">
-                  <h1 style="color: white;">Add New</h1>
-            </div>
-
-            <div class="modal-body" style="padding:30px 50px;">
-				<form role="form">
-                    <div class="form-group">
-                          <label for="project">Project</label>
-                          <select class="form-control" id="project" ng-model="selectedProject"
-                          		ng-options="project.projectId for project in projects"
-                          		ng-change="setCurrentProject(selectedProject)"></select>
-                    </div>
-                    <div class="form-group">
-                          <label for="well">Well</label>                              
-                          <select class="form-control" id="well" ng-model="selectedWell"
-                          		ng-options="well.wellId for well in currentProject.wells"
-                          		ng-change="setCurrentWell(selectedWell)"></select>
-                    </div>
-                    <div class="form-group">
-                          <label for="run">Run</label>
-                          <select class="form-control" id="run" ng-model="selectedRun"
-                          		ng-options="run.runId for run in currentWell.runs"></select>
-                    </div>
-					<div class="form-group">
-						<label for="browse">Upload your database</label>
-						<input type="file" class="filestyle" style="" data-icon="false">
-						<!-- <input value="Browse" type="file"> -->
-					</div>
-
+  <div class="modal-dialog">
+  
+        <!-- Modal content-->
+        <div class="modal-content">
+			<div class="modal-header" style="padding:30px 50px; text-align: center; background-color: #e32636 ;">
+				 <h1 style="color: white;">Add New</h1>
+			</div>
+			<form role="form">
+			   <div class="modal-body" style="padding:30px 50px;" append-source>
+						<div id="hehe" class="alert alert-danger" style="display: none">
+						   <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+						 </div>
+					   <div class="form-group">
+						   <label for="project">Project</label>
+							 
+						   <input type="text" class="form-control" id="project" name="project" ng-model="selectedProject" bs-options="project.projectId for project in projects | filter:{projectId: $viewValue}" placeholder="Enter project"
+									 ng-change="setCurrentProject(selectedProject)" bs-typeahead required>
+						  
+					   </div>
+					   <div class="form-group">
+							 <label for="well">Well</label>                              
+							 <input type="text" class="form-control" id="well" name="well" ng-model="selectedWell"
+									 bs-options="well.wellId for well in currentProject.wells | filter:{wellId: $viewValue}" placeholder="Enter well"
+									 ng-change="setCurrentWell(selectedWell)" bs-typeahead required>
+					   </div>
+						<div class="form-group">
+						<label for="run">Run</label>
+							<input type="text" class="form-control" id="run" name="run" ng-model="selectedRun"
+								 bs-options="run.runId for run in currentWell.runs | filter:{runId: $viewValue}" placeholder="Enter run" 
+								 ng-change="setCurrentRun(selectedRun)" bs-typeahead required>
+						</div>
+						<div class="form-group">
+							<label for="browse">Upload your database</label>
+							<input type="file" class="filestyle" style="" data-icon="false">
+							<!-- <input value="Browse" type="file"> -->
+						</div>
+						
 					
-				</form>
-            </div>
+			   </div>
 
-            <div class="modal-footer"  style="padding:30px 50px; text-align: center;">
+			   <div class="modal-footer"  style="padding:30px 50px; text-align: center;">
 					<div class="form-group">
-						<button type="submit" class="btn btn-default button-form grow" data-dismiss="modal" > Cancel</button>
+						<button type="submit" class="btn btn-default button-form grow myReset" data-dismiss="modal" > Cancel</button>
 						<span style="display:inline-block; width: 10%;"></span>
-						<button type="submit" class="btn btn-primary button-form grow" style="background-color: #4CAF50;">Upload</button>                   
+						<button  class="btn btn-default button-form grow myReset" type="button" > Reset</button>
+						<span style="display:inline-block; width: 10%;"></span>
+						<button id="myUpload" type="submit" class="btn btn-primary button-form grow" style="background-color: #4CAF50 ;">Upload</button>                   
 					</div>
-            </div>
-       
-         </div>
-     
-   </div>
+				</div>
+			</form>      
+        </div>
+	</div>
 </div>
-
-
-
-
-
-<!-- <style>
- .modal-header, .close {
-     background-color: #5cb85c ;
-     color:white !important;
-     text-align: center;
-     font-size: 30px;
- }
- .modal-footer {
-     background-color: #f9f9f9 ;
- }
-</style> -->
