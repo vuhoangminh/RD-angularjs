@@ -19,7 +19,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                   <table id="table-database" class="compact hover row-border" cellspacing="0" width="100%">
+					<table datatable="ng" dt-options="update.dtOptions"  class="compact hover row-border" cellspacing="0" width="100%" >
                         <thead>
                             <tr>
                                 <th>Project</th>
@@ -31,7 +31,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="x in projects">
+                            <tr ng-repeat="x in update">
                                     <td>{{ x.projectId }}</td>
                                     <td>{{ x.wellId }}</td>
                                     <td>{{ x.runId }}</td>
@@ -73,57 +73,96 @@
     
 </section>
 
-<div class="modal fade" id="newDatabasePopup" role="dialog" ng-controller="newDatabaseCtrl">
-  <div class="modal-dialog">
-  
-        <!-- Modal content-->
-        <div class="modal-content">
-			<div class="modal-header" style="padding:30px 50px; text-align: center; background-color: #e32636 ;">
-				 <h1 style="color: white;">Add New</h1>
-			</div>
-			<form role="form">
-			   <div class="modal-body" style="padding:30px 50px;" append-source>
-						<div id="hehe" class="alert alert-danger" style="display: none">
-						   <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
-						 </div>
-					   <div class="form-group">
-						   <label for="project">Project</label>
-							 
-						   <input type="text" class="form-control" id="project" name="project" ng-model="selectedProject" bs-options="project.projectId for project in projects | filter:{projectId: $viewValue}" placeholder="Enter project"
-									 ng-change="setCurrentProject(selectedProject)" bs-typeahead required>
-						  
-					   </div>
-					   <div class="form-group">
-							 <label for="well">Well</label>                              
-							 <input type="text" class="form-control" id="well" name="well" ng-model="selectedWell"
-									 bs-options="well.wellId for well in currentProject.wells | filter:{wellId: $viewValue}" placeholder="Enter well"
-									 ng-change="setCurrentWell(selectedWell)" bs-typeahead required>
-					   </div>
-						<div class="form-group">
-						<label for="run">Run</label>
-							<input type="text" class="form-control" id="run" name="run" ng-model="selectedRun"
-								 bs-options="run.runId for run in currentWell.runs | filter:{runId: $viewValue}" placeholder="Enter run" 
-								 ng-change="setCurrentRun(selectedRun)" bs-typeahead required>
-						</div>
-						<div class="form-group">
-							<label for="browse">Upload your database</label>
-							<input type="file" class="filestyle" style="" data-icon="false">
-							<!-- <input value="Browse" type="file"> -->
-						</div>
-						
-					
-			   </div>
 
-			   <div class="modal-footer"  style="padding:30px 50px; text-align: center;">
+<div class="modal fade" id="newDatabasePopup" role="dialog" ng-controller="newDatabaseCtrl">
+   <div class="modal-dialog">
+   
+         <!-- Modal content-->
+         <div class="modal-content">
+
+            <div class="modal-header" style="padding:30px 50px; text-align: center; background-color: #e32636;">
+                  <h1 style="color: white;">Add New</h1>
+            </div>
+<form role="form" ng-submit="submit()">
+            <div class="modal-body" style="padding:30px 50px;" append-source>
+				
+
+					<div id="hehe" class="alert alert-danger" style="display: none">
+    				 {{ alert }}
+  					</div>
+                    <div class="form-group">
+                        <label for="project">Project</label>
+                          
+                        <input type="text" class="form-control" id="project" name="project" ng-model="selectedProject" bs-options="project.projectId for project in projects | filter:{projectId: $viewValue}" placeholder="Enter project"
+                          		ng-change="setCurrentProject(selectedProject)" bs-typeahead required>
+                       
+                    </div>
+                    <div class="form-group">
+                          <label for="well">Well</label>                              
+                          <input type="text" class="form-control" id="well" name="well" ng-model="selectedWell"
+                          		bs-options="well.wellId for well in currentProject.wells | filter:{wellId: $viewValue}" placeholder="Enter well"
+                          		ng-change="setCurrentWell(selectedWell)" bs-typeahead required>
+                    </div>
+                    <div class="form-group">
+                          <label for="run">Run</label>
+                          <input type="text" class="form-control" id="run" name="run" ng-model="selectedRun"
+                          		bs-options="run.runId for run in currentWell.runs | filter:{runId: $viewValue}" placeholder="Enter run" 
+                          		ng-change="setCurrentRun(selectedRun)" bs-typeahead required>
+                          		</div>
+					<div class="form-group">
+						<label for="browse">Upload your database</label>
+						<input id="file-las" type="file" class="filestyle" style="" data-icon="false" required>
+						<!-- <input value="Browse" type="file"> -->
+					</div>
+					
+				
+            </div>
+
+            <div class="modal-footer"  style="padding:30px 50px; text-align: center;">
 					<div class="form-group">
 						<button type="submit" class="btn btn-default button-form grow myReset" data-dismiss="modal" > Cancel</button>
 						<span style="display:inline-block; width: 10%;"></span>
 						<button  class="btn btn-default button-form grow myReset" type="button" > Reset</button>
 						<span style="display:inline-block; width: 10%;"></span>
-						<button id="myUpload" type="submit" class="btn btn-primary button-form grow" style="background-color: #4CAF50 ;">Upload</button>                   
+						<button id="myUpload" type="submit" class="btn btn-primary button-form grow" style="background-color: #4CAF50;">Upload</button>                   
 					</div>
-				</div>
-			</form>      
-        </div>
-	</div>
+            </div>
+ </form>      
+         </div>
+     
+   </div>
 </div>
+
+<script src="http://mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.3.8"></script>
+
+<form ng-controller="deleteDemo" ng-submit="deleteHttp()">
+	<label>ProjectId</label>
+	<input type="text" id="delProj" ng-model="projectId">
+
+	<label>WellId</label>
+	<input type="text" id="delWell" ng-model="wellId">
+
+	<label>RunId</label>
+	<input type="text" id="delRun" ng-model="runId">
+
+	<button id="delData" type="submit">Delete</button>
+</form>
+
+<form ng-controller="updateDemo" ng-submit="updateHttp()">
+	<label>ProjectId</label>
+	<input type="text" id="updateProj" ng-model="projectId">
+
+	<label>WellId</label>
+	<input type="text" id="updateWell" ng-model="wellId">
+
+	<label>RunId</label>
+	<input type="text" id="updateRun" ng-model="runId">
+
+	<label>Key</label>
+	<input type="text" id="key" ng-model="key">
+
+	<label>Value</label>
+	<input type="text" id="value" ng-model="value">
+
+	<button id="updateData" type="submit">Update</button>
+</form>

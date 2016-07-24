@@ -306,40 +306,40 @@ $(document).ready(function() {
 } );
 
 
-$(document).ready(function() {
+// $(document).ready(function() {
     
-   var table=$('#table-database').DataTable( {
-       "paging":   false,
-       "info":     false,
-        "bDestroy": true,
-		"ordering": false,
-        "columns": [
-            { "width": "15%"},
-            { "width": "15%"},
-            { "width": "15%"},
-            { "width": "15%"},
-            { "width": "20%"},
-            { "width": "20%"}
-        ],
-        dom: 'Bfrtip',
-        buttons: {
-            buttons: [ 'copy', 'excel', 'pdf', 'print' ]
-        },
-   } );
-    $('#table-database tbody').on( 'click', 'tr', function () {
-       if ( $(this).hasClass('selected') ) {
-           $(this).removeClass('selected');
-       }
-       else {
-           table.$('tr.selected').removeClass('selected');
-           $(this).addClass('selected');
-       }
-   } );
+   // var table=$('#table-database').DataTable( {
+       // "paging":   false,
+       // "info":     false,
+        // "bDestroy": true,
+		// "ordering": false,
+        // "columns": [
+            // { "width": "15%"},
+            // { "width": "15%"},
+            // { "width": "15%"},
+            // { "width": "15%"},
+            // { "width": "20%"},
+            // { "width": "20%"}
+        // ],
+        // dom: 'Bfrtip',
+        // buttons: {
+            // buttons: [ 'copy', 'excel', 'pdf', 'print' ]
+        // },
+   // } );
+    // $('#table-database tbody').on( 'click', 'tr', function () {
+       // if ( $(this).hasClass('selected') ) {
+           // $(this).removeClass('selected');
+       // }
+       // else {
+           // table.$('tr.selected').removeClass('selected');
+           // $(this).addClass('selected');
+       // }
+   // } );
 
-   $('#button').click( function () {
-       table.row('.selected').remove().draw( false );
-   } );
-} );
+   // $('#button').click( function () {
+       // table.row('.selected').remove().draw( false );
+   // } );
+// } );
 
 $(document).ready(function() {
     $('#table-curve').DataTable( {

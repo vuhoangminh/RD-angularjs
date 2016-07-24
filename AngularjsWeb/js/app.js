@@ -1,5 +1,4 @@
-
-  var app = angular.module('smartdatics', [
+var app = angular.module('smartdatics', [
         'ui.router',
         'ui.bootstrap',
         'ngAnimate',
@@ -12,14 +11,9 @@
         'textAngular',
         'ui.switchery',
         'gridshore.c3js.chart',
-		'ngSanitize',
-        'mgcrea.ngStrap'
+		'datatables.buttons',
+		'datatables.tabletools',
+		'datatables.bootstrap',
+		'datatables.scroller',
+		'datatables.colreorder'
     ])
-
-
-
-
-
-
-
-

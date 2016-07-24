@@ -27,7 +27,7 @@
 		</div>
 	</div> -->
 	<div class="row">
-		<div id="testcase" class="col-md-12">
+		<div id="aloha">
 			<div class="panel panel-default">
 <!--                   <div class="panel-heading">
                     <h3 class="panel-title">Table multiple database viewer</h3>
@@ -897,3 +897,25 @@
 	</script> -->
 	
 </section>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var winHeight = $(window).height();
+        var winWidth = $(window).width();
+           var docHeight = $(document).height();
+           var docWidth = $(document).width();
+           console.log("winWidth:  " + winWidth);
+           console.log("winHeight: " + winHeight);
+           console.log("docWidth:  " + docWidth);
+           console.log("docHeight: " + docHeight);
+
+           if (winWidth <= 1440 ) {
+               $("#aloha").addClass("col-md-12");
+           } else {
+            $("#aloha").addClass("col-md-8 col-md-offset-2");  
+          }    
+           
+    });
+           
+    
+</script>
