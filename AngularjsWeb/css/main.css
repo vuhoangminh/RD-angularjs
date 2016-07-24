@@ -4475,6 +4475,28 @@ table.tablespacing {
 	 width:40%;
 }
 
+.button-common{
+	 font-size: 16px;
+	 height:50px; 
+	 width:200px;
+}
+
+.button-back{
+	background-color: #9E9E9E !important;
+}
+
+.button-load{
+	background-color: #1B5E20 !important;
+}
+
+.button-startnew{
+	background-color: #3D5AFE !important;
+}
+
+.button-addnew{
+	background-color: #009688 !important;
+}
+
 .button-small {
 	 font-size: 15px;
 	 height:40px; 

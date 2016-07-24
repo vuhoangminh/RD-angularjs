@@ -851,14 +851,14 @@
     </div>
 
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
+		<div id="button-recentsession-bootstrap">
 			<div class="panel panel-default">			
 				<div class="panel-body">
 					<form role="form">
-						<div style="text-align: center;">
-							<button ui-sref="database.load" type="submit" class="btn btn-primary grow button-large" style="background-color: #7cb9e8;">Start New Session</button>
+						<div style="text-align: right;">
+							<button ui-sref="database.load" type="submit" class="btn btn-primary grow button-startnew button-common">Start New Session</button>
 							<span style="display:inline-block; width: 30px;"></span>
-							<button type="submit" class="btn btn-primary grow button-large" style="background-color: #4CAF50;">Load</button>
+							<button type="submit" class=" button-load btn btn-primary grow button-common" >Load</button>
 						</div>
 					</form>
 				</div>
@@ -867,34 +867,6 @@
 	</div>
 	
 	<script src="js/custom.js"></script>
-	
-<!-- 	<script>
-		$(document).ready(function() {
-			
-			$('#table-recentsession').DataTable( {
-				"paging":   false,
-				"info":     false,
-				"bDestroy": true,
-				 "columns": [
-					{ "width": "18%" },
-					{ "width": "18%" },
-					{ "width": "18%" },
-					{ "width": "18%" },
-					{ "width": "16%" },
-					{ "width": "16%" }
-				],
-				dom: 'Bfrtip',
-				buttons: {
-					buttons: [ 'copy', 'excel', 'pdf', 'print' ]
-				},
-				// rowsGroup: [
-					// 'second:name',
-					// 0,
-					// 2
-				// ],
-			} );
-		} );	
-	</script> -->
 	
 </section>
 
@@ -913,9 +885,12 @@
                $("#table-recentsession-bootstrap").addClass("col-md-12");
            } else {
             $("#table-recentsession-bootstrap").addClass("col-md-8 col-md-offset-2");  
-          }    
-           
+           } 
+
+           if (winWidth <= 1440 ) {
+               $("#button-recentsession-bootstrap").addClass("col-md-12");
+           } else {
+            $("#button-recentsession-bootstrap").addClass("col-md-8 col-md-offset-2");  
+           } 		   
     });
-           
-    
 </script>
