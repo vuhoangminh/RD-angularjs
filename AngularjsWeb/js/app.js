@@ -15,5 +15,6 @@ var app = angular.module('smartdatics', [
 		'datatables.tabletools',
 		'datatables.bootstrap',
 		'datatables.scroller',
-		'datatables.colreorder'
+		'datatables.colreorder',
+		'datatables.select'
     ])

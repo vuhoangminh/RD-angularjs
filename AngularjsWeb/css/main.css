@@ -4476,25 +4476,48 @@ table.tablespacing {
 }
 
 .button-common{
-	 font-size: 16px;
+	 font-size:16px;
 	 height:50px; 
-	 width:200px;
+	 width:150px;
+	 border-radius: 10px;
+}
+
+.button-addnew:hover,
+.button-back:hover{
+    /* border: 3px solid black; */
+	background-color: #c5c5c5;
 }
 
 .button-back{
-	background-color: #9E9E9E !important;
+	color: #333333;
+	background-color: white;
+	border: 1px solid #333333;
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
 }
 
-.button-load{
-	background-color: #1B5E20 !important;
+.button-load:hover{
+	background-color: #009688 !important;
 }
+.button-load{
+	color: #333333;
+	background-color: #27b6af !important;	
+	border: 1px solid #27b6af;
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+}
+
 
 .button-startnew{
 	background-color: #3D5AFE !important;
 }
 
 .button-addnew{
-	background-color: #009688 !important;
+	color: #333333;
+	background-color: white;
+	border: 1px solid #333333;
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
 }
 
 .button-small {

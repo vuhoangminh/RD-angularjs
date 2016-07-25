@@ -14,14 +14,14 @@
     </div>
 </div>
 
-<!-- <section id="main-content" class="animated fadeInRight" ng-controller="tableCtrl"> -->
-<section id="main-content" class="animated fadeInRight">
+<section id="main-content" class="animated fadeInRight" ng-controller="tableCtrl">
+<!-- <section id="main-content" class="animated fadeInRight"> -->
     <div class="row">
         <div id="table-database-load-bootstrap">
             <div class="panel panel-default">
                 <div class="panel-body">
-					<table datatable="ng" dt-options="update.dtOptions"  class="compact hover row-border" cellspacing="0" width="100%" >
-                        <thead>
+					<table datatable="ng" dt-options="update.dtOptions"  dt-columns="update.dtColumns" class="compact hover row-border" cellspacing="0" width="100%" >
+                        <!-- <thead>
                             <tr>
                                 <th>Project</th>
                                 <th>Well</th>
@@ -30,7 +30,7 @@
                                 <th>Date Created</th>
                                 <th>Last Activity</th>
                             </tr>
-                        </thead>
+                        </thead> -->
                         <tbody>
                             <tr ng-repeat="x in update">
                                     <td>{{ x.projectId }}</td>
@@ -53,14 +53,15 @@
             <div class="panel panel-default">            
                 <div class="panel-body">
                     <form role="form">
-                        <div style="text-align: left; display:inline-block;">
-                            <button ui-sref="" type="submit" class="btn btn-primary grow button-back button-common" id="newDatabaseBtn">Back</button>						
+                        <div style="float:left;">
+                            <button ui-sref="index" type="submit" class="button-back button-common">Back</button>						
                         </div>					
-                        <div style="text-align: right; display:inline-block;">
-                            <button ui-sref="" type="submit" class="btn btn-primary grow button-addnew button-common" id="newDatabaseBtn">Add New</button>
+                        <!-- <div style="text-align: right; display:inline-block;"> -->
+						<div style="float:right;">
+                            <button type="submit" class="button-addnew button-common" id="newDatabaseBtn">Add New</button>
                             <span style="display:inline-block; width: 30px;"></span>
                             <!-- <button ui-sref="database.loadselection" type="submit" class="btn btn-primary grow button-large" style="background-color: #4CAF50 ;">Load</button> -->
-							<button type="submit" class=" button-load btn btn-primary grow button-common" >Load</button>							
+							<button ui-sref="database.loadselection" type="submit" class=" button-load button-common" >Load</button>							
                         </div>
                     </form>
                 </div>
@@ -129,7 +130,7 @@
 
 <script src="http://mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.3.8"></script>
 
-<form ng-controller="deleteDemo" ng-submit="deleteHttp()">
+<!-- <form ng-controller="deleteDemo" ng-submit="deleteHttp()">
 	<label>ProjectId</label>
 	<input type="text" id="delProj" ng-model="projectId">
 
@@ -159,7 +160,7 @@
 	<input type="text" id="value" ng-model="value">
 
 	<button id="updateData" type="submit">Update</button>
-</form>
+</form> -->
 
 <script type="text/javascript">
     $(document).ready(function() {
