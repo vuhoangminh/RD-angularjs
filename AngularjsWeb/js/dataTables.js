@@ -341,7 +341,7 @@ app.controller('tableCtrl', function tableCtrl($scope, $http, DTOptionsBuilder, 
 	$scope.update.dtOptions = DTOptionsBuilder.newOptions()
 		.withDOM('frtp')
 		.withPaginationType('numbers')
-		.withDisplayLength(10)
+		.withDisplayLength(5)
 		// .withColReorder()
 		.withBootstrap()
 		.withBootstrapOptions({
