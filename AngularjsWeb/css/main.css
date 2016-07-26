@@ -4482,6 +4482,13 @@ table.tablespacing {
 	 border-radius: 10px;
 }
 
+.button-small-common{
+	 font-size:15px;
+	 height:40px; 
+	 width:120px;
+	 border-radius: 5px;
+}
+
 .button-addnew:hover,
 .button-back:hover{
     /* border: 3px solid black; */

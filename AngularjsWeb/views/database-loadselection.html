@@ -16,7 +16,7 @@
 
 <section id="main-content" class="animated fadeInRight">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div id="table-database-loadselection-bootstrap">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<table id="table-curve" class="compact row-border" cellspacing="0" width="100%">
@@ -139,15 +139,22 @@
     </div>
 
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
+		<div id="button-database-loadselection-bootstrap">
 			<div class="panel panel-default">			
 				<div class="panel-body">
 					<form role="form">
-						<div style="text-align: center;">
+<!-- 						<div style="text-align: center;">
 							<button ui-sref="database.load" type="submit" class="btn btn-primary grow button-large" style="background-color: gray;">Back</button>
 							<span style="display:inline-block; width: 30px;"></span>
 							<button ui-sref="parameter.clay" type="submit" class="btn btn-primary grow button-large" style="background-color: #4CAF50;">Load</button>
-						</div>	
+						</div>	 -->
+                        <div style="float:left;">
+                            <button ui-sref="database.load" type="submit" class="button-back button-common">Back</button>						
+                        </div>					
+                        <!-- <div style="text-align: right; display:inline-block;"> -->
+						<div style="float:right;">
+							<button ui-sref="parameter.clay" type="submit" class="button-load button-common" >Load</button>							
+                        </div>						
 					</form>
 				</div>
 			</div>
@@ -155,22 +162,29 @@
 	</div>
 	
 	<script src="js/custom.js"></script>
-<!-- 	<script>
-		$(document).ready(function() {
-			$('#table-loaddatabase').DataTable( {
-				"paging":   false,
-				"info":     false,
-				"bFilter": false,
-				"ordering": false,
-				"bDestroy": true,
-				 "columns": [
-					{ "width": "16%" },
-					{ "width": "27%" },
-					{ "width": "27%%" },
-					{ "width": "15%" },
-					{ "width": "15%" }
-				  ]		
-			} );
-		} );
-	</script> -->
 </section>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var winHeight = $(window).height();
+        var winWidth = $(window).width();
+           var docHeight = $(document).height();
+           var docWidth = $(document).width();
+           console.log("winWidth:  " + winWidth);
+           console.log("winHeight: " + winHeight);
+           console.log("docWidth:  " + docWidth);
+           console.log("docHeight: " + docHeight);
+
+           if (winWidth <= 1440 ) {
+               $("#table-database-loadselection-bootstrap").addClass("col-md-12");
+           } else {
+            $("#table-database-loadselection-bootstrap").addClass("col-md-8 col-md-offset-2");  
+           } 
+
+           if (winWidth <= 1440 ) {
+               $("#button-database-loadselection-bootstrap").addClass("col-md-12");
+           } else {
+            $("#button-database-loadselection-bootstrap").addClass("col-md-8 col-md-offset-2");  
+           } 		   
+    });
+</script>

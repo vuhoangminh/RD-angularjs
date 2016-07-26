@@ -21,16 +21,6 @@
             <div class="panel panel-default">
                 <div class="panel-body">
 					<table datatable="ng" dt-options="update.dtOptions"  dt-columns="update.dtColumns" class="compact hover row-border" cellspacing="0" width="100%" >
-                        <!-- <thead>
-                            <tr>
-                                <th>Project</th>
-                                <th>Well</th>
-                                <th>Run</th>
-                                <th>Depth</th>
-                                <th>Date Created</th>
-                                <th>Last Activity</th>
-                            </tr>
-                        </thead> -->
                         <tbody>
                             <tr ng-repeat="x in update">
                                     <td>{{ x.projectId }}</td>
@@ -58,10 +48,12 @@
                         </div>					
                         <!-- <div style="text-align: right; display:inline-block;"> -->
 						<div style="float:right;">
+							<button type="submit" class="button-addnew button-common" >Delete</button>
+                            <span style="display:inline-block; width: 30px;"></span>
                             <button type="submit" class="button-addnew button-common" id="newDatabaseBtn">Add New</button>
                             <span style="display:inline-block; width: 30px;"></span>
                             <!-- <button ui-sref="database.loadselection" type="submit" class="btn btn-primary grow button-large" style="background-color: #4CAF50 ;">Load</button> -->
-							<button ui-sref="database.loadselection" type="submit" class=" button-load button-common" >Load</button>							
+							<button ui-sref="database.loadselection" type="submit" class="button-load button-common" >Load</button>							
                         </div>
                     </form>
                 </div>
@@ -79,8 +71,8 @@
          <!-- Modal content-->
          <div class="modal-content">
 
-            <div class="modal-header" style="padding:30px 50px; text-align: center; background-color: #e32636;">
-                  <h1 style="color: white;">Add New</h1>
+            <div class="modal-header" style="padding:30px 50px; text-align: center; background-color: white;">
+                  <h1 style="color: black;">Add New</h1>
             </div>
 				<form role="form" ng-submit="submit()">
 					<div class="modal-body" style="padding:30px 50px;" append-source>
@@ -115,11 +107,11 @@
 
 					<div class="modal-footer"  style="padding:30px 50px; text-align: center;">
 							<div class="form-group">
-								<button type="submit" class="btn btn-default button-form grow myReset" data-dismiss="modal" > Cancel</button>
-								<span style="display:inline-block; width: 10%;"></span>
-								<button  class="btn btn-default button-form grow myReset" type="button" > Reset</button>
-								<span style="display:inline-block; width: 10%;"></span>
-								<button id="myUpload" type="submit" class="btn btn-primary button-form grow" style="background-color: #4CAF50;">Upload</button>                   
+								<button type="submit" class="button-back button-small-common myReset" data-dismiss="modal" > Close</button>
+								<span style="display:inline-block; width: 20px;"></span>
+								<button  class="button-back button-small-common myReset" type="button" > Reset</button>
+								<span style="display:inline-block; width: 20px;"></span>
+								<button id="myUpload" type="submit" class="button-load button-small-common">Upload</button>                   
 							</div>
 					</div>
 				 </form>      
