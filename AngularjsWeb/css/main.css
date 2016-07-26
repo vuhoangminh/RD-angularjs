@@ -4628,5 +4628,5 @@ a.dt-button {
 	border: 1px solid #333333!important;
     -webkit-transition-duration: 0.1s!important; /* Safari */
     transition-duration: 0.1s!important;
-	background-image: -webkit-linear-gradient(top, white 0%, white 100%)!important;
+/* 	background-image: -webkit-linear-gradient(top, white 0%, white 100%)!important; */
 }
