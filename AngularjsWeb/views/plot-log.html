@@ -18,7 +18,8 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Basic chart with two lines</h3>
+                    <h3 class="panel-title">{{runName}}</h3>
+					
                     <div class="actions pull-right">
 						<i data-fullscreen-widget class="fa fa-expand"></i>
                         <i data-widget-toggle  class="fa fa-chevron-down"></i>
@@ -26,13 +27,50 @@
                     </div>
                 </div>
                 <div class="panel-body text-center">
-                    <c3chart bindto-id="chart1">
-                        <chart-column column-id="data 1" column-values="30,200,100,400,150,250,100,600,100,200,50" column-type="spline" />
-                        <chart-column column-id="data 2" column-values="50,20,10,40,15,25,100,600,100,200,50" column-type="line" />
-                    </c3chart>
+					<div id="main-container">
+						<div id="container-graph">
+							<div class="setting-header">
+								Plot Setting<button type="button" class="close" id="close">&times;</button>
+							</div>
+							<table class="table table-hover">
+								<thead>
+									  <tr>
+										<th>Curve Name</th>
+										<th>Curve Type</th>
+										<th>Unit</th>
+										<th>Color</th>
+										<th>Line Style</th>
+									  </tr>
+								</thead>
+								<tbody>
+									  <tr ng-repeat="data in settingData">
+										<td>{{ data.MNEM }}</td>
+										<td>{{ data.Curve_Type }}</td>
+										<td>{{ data.UNIT }}</td>
+										<td>
+											<select colorselectors id="colorselector" ng-model="data.COLOR" ng-change="printConsole()">
+												 <option ng-repeat="color in colors" data-color="{{ color.code }}" >{{ color.code }}</option> 
+											</select>
+										</td>
+										<td>
+											<select id="line" ng-model="data.LINE_STYLE" ng-options="line for line in lineStyles" ng-change="printConsole()">
+										</select>
+										</td>
+									  </tr>
+								</tbody>
+							 </table>
+							 <div class="setting-footer">
+								<button class="btn pull-right" ng-click = "cancelSetting()">Cancel</button>
+								<button class="btn pull-right" ng-click = "okSetting()">OK</button>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div id="chart"></div>
+					</div>
                 </div>
             </div>
         </div>
     </div>
 
 </section>
+

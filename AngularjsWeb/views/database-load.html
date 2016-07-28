@@ -20,6 +20,7 @@
         <div id="table-database-load-bootstrap">
             <div class="panel panel-default">
                 <div class="panel-body">
+				    <!-- <p class="text-danger">You clicked on: <strong>{{ message }}</strong></p> -->
 					<table datatable="ng" dt-options="update.dtOptions"  dt-columns="update.dtColumns" class="compact hover row-border" cellspacing="0" width="100%" >
                         <tbody>
                             <tr ng-repeat="x in update">
@@ -49,12 +50,12 @@
 					<!-- <div style="text-align: right; display:inline-block;"> -->
 					<div style="float:right;">
 						<!-- <button ui-sref="database.loadselection" type="submit" class="btn btn-primary grow button-large" style="background-color: #4CAF50 ;">Load</button> -->
-						<button ui-sref="database.loadselection" type="submit" class="button-load button-common" >Load</button>							
+						<button ui-sref="database.loadselection" type="submit" class="button-load button-common" id="loadDatabase" disabled >Load</button>							
 					</div>
 					<div style="text-align: center;">
 						<button type="submit" class="button-addnew button-common" >Edit</button>
 						<span style="display:inline-block; width: 30px;"></span>
-						<button type="submit" class="button-addnew button-common" >Delete</button>
+						<button type="submit" class="button-addnew button-common" data-toggle="modal" data-target="#deleteModal" id="deleteDatabase" disabled >Delete</button>
 						<span style="display:inline-block; width: 30px;"></span>
 						<button type="submit" class="button-addnew button-common" id="newDatabaseBtn">Add New</button>
 						<span style="display:inline-block; width: 30px;"></span>
@@ -123,7 +124,26 @@
    </div>
 </div>
 
-<script src="http://mgcrea.github.io/angular-strap/dist/angular-strap.js" data-semver="v2.3.8"></script>
+<!-- Modal -->
+  <div class="modal fade" id="deleteModal" role="dialog" ng-controller="deleteDemo">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Are you sure you want to delete:</h4>
+        </div>
+        <div class="modal-body">
+          <p>Project: {{ projectId }}</p>
+          <p>Well: {{ wellId }}</p>
+          <p>Run: {{ runId }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="deleteHttp()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- <form ng-controller="deleteDemo" ng-submit="deleteHttp()">
 	<label>ProjectId</label>
@@ -163,10 +183,10 @@
         var winWidth = $(window).width();
            var docHeight = $(document).height();
            var docWidth = $(document).width();
-           console.log("winWidth:  " + winWidth);
-           console.log("winHeight: " + winHeight);
-           console.log("docWidth:  " + docWidth);
-           console.log("docHeight: " + docHeight);
+           // console.log("winWidth:  " + winWidth);
+           // console.log("winHeight: " + winHeight);
+           // console.log("docWidth:  " + docWidth);
+           // console.log("docHeight: " + docHeight);
 
            if (winWidth <= 1440 ) {
                $("#table-database-load-bootstrap").addClass("col-md-12");

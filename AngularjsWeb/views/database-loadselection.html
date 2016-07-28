@@ -5,7 +5,6 @@
 			<li><a ui-sref="index">Start</a></li>
 			<li><a ui-sref="database.load">Load Database</a></li>
 			<li style="font-size:15px"><b>Load Curve</b></li>            
-			<li>Parameter Set</li>
 			<li>Plot</li>
 			<li>Calculation & Correction</li>
 			<li>Interpretation</li>
@@ -14,125 +13,25 @@
     </div>
 </div>
 
-<section id="main-content" class="animated fadeInRight">
+<section id="main-content" class="animated fadeInRight" ng-controller="loadCurveCtrl">
 	<div class="row">
 		<div id="table-database-loadselection-bootstrap">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<table id="table-curve" class="compact row-border" cellspacing="0" width="100%">
-						<thead>
-							<tr>
-								<th><input ichecks id="icheck-all" type="checkbox" checked="" name="check1"></th>
-								<th>Name</th>
-								<th>Name Standard</th>
-								<th>Unit</th>
-								<th>Unit Standard</th>
-							</tr>
-						</thead>
-
+				        <!-- </p><pre>{{ selected |json }}</pre>
+				        </p><pre>{{ chosenField |json }}</pre> -->
+						<!-- </p><pre>{{ chosenField |json }}</pre> -->
+					<table datatable="ng" dt-options="curveInfoData.dtOptions" dt-columns="curveInfoData.dtColumns" dt-instance="dtInstance" class="compact row-border" cellspacing="0" width="100%">
 						<tbody>
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>DEPTH</td>
-								<td>Depth</td>
-								<td>.M</td>
-								<td>.M</td>
-							</tr>
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>CALI_RHOB</td>
-								<td>Caliper</td>
-								<td>.IN</td>
-								<td>.IN</td>
-							</tr>
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>DT</td>
-								<td>Sonic</td>
-								<td>.US/FT</td>
-								<td>.US/FT</td>
-							</tr>
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>GR</td>
-								<td>Gamma Ray</td>
-								<td>.API</td>
-								<td>.API</td>
-							</tr>
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>LLD</td>
-								<td>Deep Resistivity</td>
-								<td>.OHMM</td>
-								<td>.OHMM</td>
-							</tr>
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>LLS</td>
-								<td>Deep Resistivity</td>
-								<td>.OHMM</td>
-								<td>.OHMM</td>
-							</tr>							
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>MSFL</td>
-								<td>Micro Resistivity</td>
-								<td>.OHMM</td>
-								<td>.OHMM</td>
-							</tr>
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>NPHI</td>
-								<td>Neutrol Poropsity</td>
-								<td>.V/V</td>
-								<td>.V/V</td>
-							</tr>
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>PE</td>
-								<td>Photoelectric</td>
-								<td>.B/E</td>
-								<td>.B/E</td>
-							</tr>
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>SP</td>
-								<td>Spontaneous Potential</td>
-								<td>.MV</td>
-								<td>.MV</td>
-							</tr>
-							<tr>
-								<td>
-									<input ichecks class="icheck" type="checkbox" checked="" name="check1">
-								</td>
-								<td>RHOB</td>
-								<td>Density</td>
-								<td>.G/CC</td>
-								<td>.G/CC</td>
-							</tr>							
+							<tr ng-repeat="x in curveInfoData">
+								<td></td>
+								<td>{{ x.MNEM }}</td>
+								<td>{{ x.Curve_Type }}</td>
+								<td>{{ x.UNIT }}</td>
+								<td>{{ x.UNIT }}</td>	
+							</tr>	
 						</tbody>
 					</table>
-
 				</div>
              </div>
         </div>
@@ -155,7 +54,7 @@
                         </div>					
                         <!-- <div style="text-align: right; display:inline-block;"> -->
 						<div style="float:right;">
-							<button ui-sref="parameter.clay" type="submit" class="button-load button-common" >Load</button>							
+							<button ui-sref="plot.log" type="submit" class="button-load button-common" >Load</button>							
                         </div>						
 					</form>
 				</div>

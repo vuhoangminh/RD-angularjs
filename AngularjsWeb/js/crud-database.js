@@ -1,9 +1,9 @@
 app.controller('newDatabaseCtrl', function($scope, $http, $templateCache) {
 
-    var getPath = 'http://192.168.1.150:8080/smartdatics-sora/restapi/uploadData/all';
+    /*var getPath = 'http://192.168.1.26:8080/smartdatics-sora/restapi/uploadData/all';
     $http.get(getPath).then(function(response) {
         $scope.projects = response.data;
-    });
+    });*/
 
     $scope.alert = null;
 
@@ -348,16 +348,15 @@ app.controller('newDatabaseCtrl', function($scope, $http, $templateCache) {
 
         console.log(datas);
 
-        var req = {
-            method: 'POST',
-            url: 'http://192.168.1.150:8080/smartdatics-sora/restapi/uploadData/',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            data: datas
-        };
+        ajaxPostReq('http://192.168.1.26:8080/smartdatics-sora/restapi/uploadData/', datas, 'application/json', function(res) {
+            var fd = new FormData();
+            fd.append('file', fileLas);
+            fd.append('token', res.content);
 
-        $http(req).then(function successCallback(res) {
+            ajaxPostReq('http://192.168.1.26:8080/smartdatics-sora/restapi/uploadData/file', fd, undefined, displayAction);
+        });
+
+        /*$http(req).then(function successCallback(res) {
             console.log(res.data);
 
             var fd = new FormData();
@@ -367,7 +366,7 @@ app.controller('newDatabaseCtrl', function($scope, $http, $templateCache) {
 
             var request = {
                 method: 'POST',
-                url: 'http://192.168.1.150:8080/smartdatics-sora/restapi/uploadData/file',
+                url: 'http://192.168.1.26:8080/smartdatics-sora/restapi/uploadData/file',
                 headers: {
                    'Content-Type': undefined
                 },
@@ -376,8 +375,7 @@ app.controller('newDatabaseCtrl', function($scope, $http, $templateCache) {
 
             $http(request).then(function successCallback(response) {
                 console.log(response.data);
-                $scope.alert = "MessageList: " + respose.data.messageList[0] + 
-                            ".\nContent: " + respose.data.content + ".";
+                $scope.alert = response.data.content + ".";
                 $("#hehe").css('display', 'block');
             }, function errorCallback(response) {
                 console.log(response.data);
@@ -392,23 +390,46 @@ app.controller('newDatabaseCtrl', function($scope, $http, $templateCache) {
                             ".\nContent: " + res.data.content + ".";
             $("#hehe").css('display', 'block');
         });
-
+*/
 
     };
 
     $(".myReset").on('click', function() {
         $("#hehe").css('display', 'none');
-        console.log("reset");
         $("#project").val('');
         $("#well").val('');
         $("#run").val('');
     });
 
+    function ajaxPostReq(urlPath, postData, contentType, callback) {
+        var request = {
+            method: 'POST',
+            url: urlPath,
+            headers: {
+                'Content-Type': contentType
+            },
+            data: postData
+        };
+        $http(request).then(function successCallback(response) {
+            callback(response.data);
+        }, function errorCallback(response) {
+            callback(response.data);
+        });
+    }
+
+    function displayAction(json) {
+        console.log(json);
+        $scope.alert = json.content + ".";
+        $("#hehe").css('display', 'block');
+    }
+
 
 });
 
-app.controller('deleteDemo', function($scope, $http) {
+app.controller('deleteDemo', function($scope, $http, $rootScope) {
     $scope.deleteHttp = function() {
+
+
         var datas = 
         {
             "projectId": "",
@@ -422,19 +443,24 @@ app.controller('deleteDemo', function($scope, $http) {
             }]
         };
 
-        datas.projectId = $scope.projectId;
-        datas.wells[0].wellId = $scope.wellId;
-        datas.wells[0].runs[0].runId = $scope.runId;
+        datas.projectId = $rootScope.projectId;
+        datas.wells[0].wellId = $rootScope.wellId;
+        datas.wells[0].runs[0].runId = $rootScope.runId;
 
         $http({
             method: 'DELETE',
-            url: 'http://192.168.1.150:8080/smartdatics-sora/restapi/uploadData/',
+            url: 'http://192.168.1.26:8080/smartdatics-sora/restapi/uploadData/',
             headers: {
                 'Content-Type': 'application/json'
             },
             data: datas
         }).then(function successCallback(res) {
             console.log(res);
+            var getPath = 'http://192.168.1.26:8080/smartdatics-sora/restapi/uploadData/all';
+            $http.get(getPath).then(function(response) {
+                $rootScope.projects = response.data;
+                console.log($rootScope.projects);
+            });
         }, function errorCallback(res) {
             console.log(res);
         });
@@ -466,13 +492,17 @@ app.controller('updateDemo', function($scope, $http) {
 
         $http({
             method: 'PUT',
-            url: 'http://192.168.1.150:8080/smartdatics-sora/restapi/uploadData/?isUpdate=true',
+            url: 'http://192.168.1.26:8080/smartdatics-sora/restapi/uploadData/?isUpdate=true',
             headers: {
                 'Content-Type': 'application/json'
             },
             data: datas
         }).then(function successCallback(res) {
             console.log(res);
+            var getPath = 'http://192.168.1.26:8080/smartdatics-sora/restapi/uploadData/all';
+            $http.get(getPath).then(function(response) {
+                $scope.projects = response.data;
+            });
         }, function errorCallback(res) {
             console.log(res);
         });
